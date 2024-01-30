@@ -1,0 +1,332 @@
+{
+    "status": [
+        {
+            "id": 1,
+            "name": "none"
+        },
+        {
+            "id": 2,
+            "name": "BestSeller"
+        },
+        {
+            "id": 3,
+            "name": "New"
+        },
+        {
+            "id": 4,
+            "name": "SoldOut"
+        }
+    ],
+    "type": [
+        {
+            "id": 1,
+            "name": "Low-Top"
+        },
+        {
+            "id": 2,
+            "name": "Running"
+        },
+        {
+            "id": 3,
+            "name": "High-top"
+        },
+        {
+            "id": 4,
+            "name": "Sport"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Air Jordan 1 Low",
+            "statusId": 3,
+            "typeId": 1,
+            "cost": 3329000,
+            "discount": 10,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fe657d71-ee16-43ca-b7de-3e9313b288a1/air-jordan-1-low-shoes-6Q1tFM.png",
+            "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "red",
+                    "stock": 20,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fe657d71-ee16-43ca-b7de-3e9313b288a1/air-jordan-1-low-shoes-6Q1tFM.png",
+                    "sizes": [
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "white",
+                    "stock": 35,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4e68ee0e-15fc-4bcc-9220-b7f659087c0d/air-jordan-1-low-shoes-6Q1tFM.png",
+                    "sizes": [
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                    ]
+                },
+                {
+                    "id": 3,
+                    "color": "blue",
+                    "stock": 35,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/278e1c48-dd0e-4a1e-8b96-eee84074b094/air-jordan-1-low-shoes-6Q1tFM.png",
+                    "sizes": [
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Air Jordan Legacy 312 Low",
+            "statusId": 1,
+            "typeId": 1,
+            "cost": 4259000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/rcrzrsqnkt7vgde4hhpo/air-jordan-legacy-312-low-shoes-6Vd4Xl.png",
+            "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Summit White/Varsity Red/Sail/Black",
+                    "stock": 15,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/rcrzrsqnkt7vgde4hhpo/air-jordan-legacy-312-low-shoes-6Vd4Xl.png",
+                    "sizes": [
+                        39,
+                        40,
+                        41
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "White/Black/Grey",
+                    "stock": 15,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b62ad0c4-ae84-4e35-9ec4-361c5973107f/air-jordan-legacy-312-low-shoes-6Vd4Xl.png",
+                    "sizes": [
+                        39,
+                        40,
+                        41
+                    ]
+                },
+                {
+                    "id": 3,
+                    "color": "Black/White/Cement Grey",
+                    "stock": 15,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/w3pfhs6na4one3wyejxl/air-jordan-legacy-312-low-shoes-6Vd4Xl.png",
+                    "sizes": [
+                        39,
+                        40,
+                        41
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Air Jordan XXXVIII Low PF",
+            "statusId": 3,
+            "typeId": 1,
+            "cost": 5439000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ec5c0284-730d-4bb9-8920-abe3c55c50e9/air-jordan-xxxviii-low-pf-basketball-shoes-2lBnKn.png",
+            "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Coconut Milk/Atmosphere",
+                    "stock": 10,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ec5c0284-730d-4bb9-8920-abe3c55c50e9/air-jordan-xxxviii-low-pf-basketball-shoes-2lBnKn.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "White/Black/Siren Red",
+                    "stock": 3,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6145c085-6607-406d-8f7c-ce1fda8fc838/air-jordan-xxxviii-low-pf-basketball-shoes-2lBnKn.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Air Jordan 1 Low SE",
+            "statusId": 3,
+            "typeId": 1,
+            "cost": 5439000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1cfc4de7-080f-4246-8055-5fc79f1eb430/air-jordan-1-low-se-shoes-ZbxSRp.png",
+            "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Phantom/Coconut Milk/Amber",
+                    "stock": 10,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1cfc4de7-080f-4246-8055-5fc79f1eb430/air-jordan-1-low-se-shoes-ZbxSRp.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "Sail",
+                    "stock": 3,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2315fdf2-d6d3-4b36-a8fe-6866ef13e8d9/air-jordan-1-low-se-shoes-SXvmZ0.png",
+                    "sizes": [
+                        38,
+                        40,
+                        42
+                    ]
+                },
+                {
+                    "id": 3,
+                    "color": "Navy/Cyber Teal",
+                    "stock": 3,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/43487e1e-6c3d-4cdd-836b-c4dcbe2bfb89/air-jordan-1-low-se-shoes-xq1gdm.png",
+                    "sizes": [
+                        38,
+                        40,
+                        42
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Air Jordan 1 Mid SE",
+            "statusId": 2,
+            "typeId": 3,
+            "cost": 4409000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0c675ac2-d6f2-400e-84ba-1a18003608ac/air-jordan-1-mid-se-shoes-XkFP30.png",
+            "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Velvet Brown/Sand Drift",
+                    "stock": 10,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0c675ac2-d6f2-400e-84ba-1a18003608ac/air-jordan-1-mid-se-shoes-XkFP30.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Air Jordan 1 Zoom CMFT 2",
+            "statusId": 3,
+            "typeId": 3,
+            "cost": 4259000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dca03476-2343-49cc-ac02-aaa5f56e1d6c/air-jordan-1-zoom-cmft-2-shoes-nX8Qqx.png",
+            "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Sail/Fossil",
+                    "stock": 10,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dca03476-2343-49cc-ac02-aaa5f56e1d6c/air-jordan-1-zoom-cmft-2-shoes-nX8Qqx.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Tatum 1 'Home Team' PF",
+            "statusId": 1,
+            "typeId": 4,
+            "cost": 3519000,
+            "discount": 0,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/631e05dc-3906-47d9-8934-0f74c74bcf41/tatum-1-home-team-pf-basketball-shoes-JbXhDt.png",
+            "description": "Designed to carry you from the first to the fourth (and whatever OT comes up) as efficiently as possible, we stripped it down to the essentials—and made those essentials really, really good. The result is this season's lightest performance basketball shoe, with rubber only where it counts, a stress-tested foam midsole and an uncaged Nike Zoom Air unit for those explosive ups. Whatever stage of ball you're at, the Tatum 1 will keep you playing.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "Sail / Fossil",
+                    "stock": 12,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/631e05dc-3906-47d9-8934-0f74c74bcf41/tatum-1-home-team-pf-basketball-shoes-JbXhDt.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Nike Go FlyEase",
+            "statusId": 2,
+            "typeId": 4,
+            "cost": 3829000,
+            "discount": 20,
+            "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3251a6d3-13bd-4fc1-8874-272b554f44a1/go-flyease-easy-on-off-shoes-3svRCL.png",
+            "description": "Ditch the laces and get outside. These kicks feature Nike's revolutionary FlyEase technology, making on-and-off a breeze. With a heel that pivots open for a totally hands-free entry, they're great for people with limited mobility—or anyone who wants a quicker way to get going.",
+            "attribute": [
+                {
+                    "id": 1,
+                    "color": "White/Black",
+                    "stock": 3,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3251a6d3-13bd-4fc1-8874-272b554f44a1/go-flyease-easy-on-off-shoes-3svRCL.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "Black/White",
+                    "stock": 2,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c76e2119-acb7-4944-9085-d4f5ae2bda4a/go-flyease-easy-on-off-shoes-3svRCL.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                },
+                {
+                    "id": 3,
+                    "color": "Green/Light Silver",
+                    "stock": 4,
+                    "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/938de508-2ff7-408c-962b-14fb007e2d22/go-flyease-easy-on-off-shoes-3svRCL.png",
+                    "sizes": [
+                        40,
+                        41,
+                        42
+                    ]
+                }
+            ]
+        }
+    ]
+}
