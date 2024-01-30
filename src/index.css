@@ -10,31 +10,39 @@
 .left_banner {
     top: 20%;
     left: 20%;
-    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .right_banner {
     bottom: 20%;
     right: 20%;
-    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .img_banner {
     width: 60vh;
-    filter: drop-shadow(30px 0px 5px rgba(0,0,0,0.4));
+    filter: drop-shadow(30px 0px 5px rgba(0, 0, 0, 0.4));
     animation: bouncelittle infinite 2s ease-in-out;
 }
 
 .img_banner:hover {
-    filter: drop-shadow(30px 30px 5px rgba(53,53,53,0.8));
+    filter: drop-shadow(30px 30px 5px rgba(53, 53, 53, 0.8));
 }
 
 @keyframes bouncelittle {
-    0% , 100%{
+
+    0%,
+    100% {
         transform: translate(-50%, 22%);
     }
+
     50% {
         transform: translate(-50%, 20%);
     }
+}
 
+/* Sign in UI */
+
+#logo_signin {
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
 }
