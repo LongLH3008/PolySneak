@@ -19,11 +19,13 @@ const HeaderComponent = () => `
                 href="/">Help</a>
         </li>
     </ul>
-    <ul class="flex justify-between items-center text-1xl">
+    <ul id="" class="flex justify-between items-center text-1xl">
         <li class="mr-5 cursor-pointer p-2 px-3 rounded-md hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white">
             <i class="fa-solid fa-magnifying-glass"></i>
         </li>
-        <li><a href="/signin" class="p-2 px-3 rounded-md hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white"><i class="fa-solid fa-key"></i></a></li>
+        <li id="userStatus" class="relative">
+            <a href="/signin" class="p-2 px-3 rounded-md hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white"><i class="fa-solid fa-key"></i></a>
+        </li>
     </ul>
 </nav>
 `

@@ -8,11 +8,18 @@
 </head>
 
 <body>
+    <div>
+        Status:
+    </div>
+    <h2 id="check">
+
+    </h2>
     <form id="login" action="#">
         <input id="username" type="text" placeholder="Email">
         <input id="password" type="password" placeholder="Password">
         <button type="submit">submit</button>
     </form>
+    <button id="signout">Sign out</button>
 
     <script>
         const api = 'http://localhost:3000/users';
@@ -31,18 +38,45 @@
         function handleLogin(data) {
             let username = document.getElementById('username').value;
             let password = document.getElementById('password').value;
+            let check = '';
             data.forEach(dt => {
-                if (dt.username == username && dt.password == password) {
-                    alert('Success');
+                if (dt.username == username) {
+                    check = dt.password == password ? `Welcome` : 'Wrong Password';
+                } else {
+                    check = 'Email/Username does not exist'
                 }
             });
+
+            if (check == 'Welcome') {
+                const user = {
+                    id: '',
+                    username: username,
+                }
+                localStorage.setItem('user', JSON.stringify(user));
+                check += ` ${username}`
+                activeStatus();
+            }
+            alert(check)
         }
 
         const loginForm = document.getElementById('login');
-        loginForm.addEventListener('submit', function(e) {
+        loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
             login()
         })
+
+        signout.addEventListener('click', function () {
+            localStorage.removeItem('user');
+            activeStatus();
+        })
+
+        function activeStatus() {
+            const check = document.getElementById('check')
+            const active = localStorage.getItem('user');
+            check.innerText = active ? 'Actived' : 'Not active'
+        }
+
+        // localStorage.clear()
     </script>
 </body>
 

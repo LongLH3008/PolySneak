@@ -14,29 +14,27 @@ const SignInHandler = () => {
 
     function handleSignin(data) {
         console.log(data);
-        let username = document.getElementById('username').value;
-        console.log(username);
-        let password = document.getElementById('password').value;
-        console.log(password);
-        let check = ''
-        data.forEach(dt => {
-            if (dt.username == username) {
-                check = dt.password == password ? 'Welcome' : 'Wrong Password';
-            }else {
-                check = 'Email/Username does not exist'
+        let user = document.getElementById('username').value;
+        console.log(user);
+        let pass = document.getElementById('password').value;
+        console.log(pass);
+        let check = 'Email/Username does not exist'
+
+        data.map(dt => {
+            if (dt.username == user) {
+                check = dt.password == pass ? 'Welcome' : 'Wrong Password';
+                // check = 'Welcome';
             }
         });
 
         console.log(check);
 
         if (check == 'Welcome') {
-            const user = {
-                id: '',
-                username: username,
+            const userActive = {
+                username: user,
             }
-            localStorage.setItem('user', JSON.stringify(user));
-            // alert(check)
-            window.location.href = '/'
+            localStorage.setItem('user', JSON.stringify(userActive));
+            window.location.href = '/';
         }
 
         alert(check)

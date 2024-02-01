@@ -6,10 +6,10 @@ import ErrorPage from "./pages/404_notfound";
 import ListProductPage from "./pages/list_product";
 import SigninPage from "./pages/signin";
 import SignupPage from "./pages/signup";
-
 import SignUpHandler from "./handler/signup";
 import DetailProductHandler from "./handler/detailproduct";
 import SignInHandler from "./handler/signin";
+import ActiveStatus from "./handler/activeStatus";
 
 const render = (container, components) => document.querySelector(container).innerHTML = components
 
@@ -27,6 +27,12 @@ router.on('/signup', () => {
   SignUpHandler();
 })
 
+router.on('/signout', () => {
+  localStorage.removeItem('user');
+  alert('See you again !')
+  router.navigate('/')
+});
+
 router.on('/contact', () => render('#app', ContactPage()));
 router.on('/product', () => render('#app', ListProductPage()));
 
@@ -35,8 +41,8 @@ router.on('/detailproduct/:id', ({ data }) => {
   DetailProductHandler();
 })
 
-localStorage.removeItem('user')
-
 router.notFound = () => render('#app', ErrorPage())
 
 router.resolve();
+
+ActiveStatus();
