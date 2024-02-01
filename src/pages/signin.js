@@ -10,13 +10,13 @@ const SigninPage = () => `
         <form action="#" class="flex flex-col items-center justify-center">
             <div class="w-3/5 flex justify-between items-center gap-5">
                 <i class="fa-solid fa-lock text-2xl"></i>
-                <input type="email" class="w-full outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Email@">
+                <input required id="username" type="email" class="w-full outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Email@">
             </div>
             <div class="w-3/5 flex justify-between items-center gap-5 mt-3">
                 <i class="fa-solid fa-key text-2xl"></i>
-                <input type="password" class="w-full outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Password***">
+                <input required id="password" type="password" class="w-full outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Password***">
             </div>
-            <button class="mt-3 w-3/5 p-3 px-4 bg-gradient-to-br from-orange-500 to-amber-400 text-white font-semibold hover:from-orange-400 hover:to-amber-600">Sign in</button>
+            <button type="submit" class="mt-3 w-3/5 p-3 px-4 bg-gradient-to-br from-orange-500 to-amber-400 text-white font-semibold hover:from-orange-400 hover:to-amber-600">Sign in</button>
             <div class="mt-2 w-3/5">
                 <p>Don't have acount ? <a href="/signup" class="underline text-orange-500">Sign Up Here</a></p>
             </div>

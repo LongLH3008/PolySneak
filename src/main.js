@@ -6,17 +6,21 @@ import ErrorPage from "./pages/404_notfound";
 import ListProductPage from "./pages/list_product";
 import SigninPage from "./pages/signin";
 import SignupPage from "./pages/signup";
-import render from "../utils/render";
-import { products } from '../db.json';
-import { users } from '../db.json'
+
 import SignUpHandler from "./handler/signup";
 import DetailProductHandler from "./handler/detailproduct";
+import SignInHandler from "./handler/signin";
+
+const render = (container, components) => document.querySelector(container).innerHTML = components
 
 const router = new Navigo('/', { linkSelector: 'a' });
 
 router.on('/', () => render('#app', HomePage()));
 
-router.on('/signin', () => render('#app', SigninPage()));
+router.on('/signin', () => {
+  render('#app', SigninPage());
+  SignInHandler();
+})
 
 router.on('/signup', () => {
   render('#app', SignupPage());
@@ -30,6 +34,8 @@ router.on('/detailproduct/:id', ({ data }) => {
   render('#app', DetailProductPage(data.id));
   DetailProductHandler();
 })
+
+localStorage.removeItem('user')
 
 router.notFound = () => render('#app', ErrorPage())
 

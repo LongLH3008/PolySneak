@@ -8,8 +8,9 @@ const SignUpHandler = () => {
 
     function getDataUser(callback) {
         fetch(api)
-            .then(function (response) { return response.json() })
+            .then(response => response.json())
             .then(callback)
+            .catch(error => console.error('Error fetching data:', error));
     }
 
     function addNewUser(user) {
@@ -20,18 +21,17 @@ const SignUpHandler = () => {
             },
             body: JSON.stringify(user)
         })
-            .then(function (response) {
-                return response.json();
-            })
+            .then(response => response.json())
+            .catch(error => console.error('Error adding new user:', error));
     }
 
     function handleSignup(data) {
         let usernameSignup = document.getElementById('usernameSignup').value;
         let passwordSignup = document.getElementById('passwordSignup').value;
         let repassword = document.getElementById('repassword').value;
-        let err = false;
+        let err = '';
 
-        let user = {
+        let adduser = {
             id: '',
             username: usernameSignup,
             password: passwordSignup
@@ -39,27 +39,27 @@ const SignUpHandler = () => {
 
         data.forEach(dt => {
             if (dt.username == usernameSignup) {
-                alert('Email already exist');
-                err = true
+                err = 'Email already exist !\n';
             }
         });
 
         if (passwordSignup !== repassword) {
-            alert('Password not match !');
-            err = true
+            err += 'Password not match !';
         }
 
-        if (err === false) {
+        if (err === '') {
             alert('Signup success')
-            addNewUser(user);
-            router.navigate('/signin');
+            addNewUser(adduser);
+            window.location.href = '/signin'
+        } else {
+            alert(err);
         }
     }
 
     const signupForm = document.getElementById('signup');
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        signup()
+        signup();
     })
 }
 export default SignUpHandler
