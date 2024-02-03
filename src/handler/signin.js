@@ -3,7 +3,6 @@ const SignInHandler = () => {
 
     function signin() {
         getDataUser(handleSignin);
-        // alert('signin');
     }
 
     function getDataUser(callback) {
@@ -23,7 +22,6 @@ const SignInHandler = () => {
         data.map(dt => {
             if (dt.username == user) {
                 check = dt.password == pass ? 'Welcome' : 'Wrong Password';
-                // check = 'Welcome';
             }
         });
 
@@ -36,7 +34,6 @@ const SignInHandler = () => {
             localStorage.setItem('user', JSON.stringify(userActive));
             window.location.href = '/';
         }
-
         alert(check)
     }
 

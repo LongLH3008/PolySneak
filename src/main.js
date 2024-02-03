@@ -10,6 +10,7 @@ import SignUpHandler from "./handler/signup";
 import DetailProductHandler from "./handler/detailproduct";
 import SignInHandler from "./handler/signin";
 import ActiveStatus from "./handler/activeStatus";
+import { sendRequest, getData, deleteData, updateData, createData } from './admin/handleCRUD.js';
 
 const render = (container, components) => document.querySelector(container).innerHTML = components
 
@@ -46,3 +47,18 @@ router.notFound = () => render('#app', ErrorPage())
 router.resolve();
 
 ActiveStatus();
+
+const check = await getData('users');
+console.log(check);
+
+const user = {
+  id: '',
+  username: 'admin2@polysneak',
+  password: '456'
+}
+
+// createData(user, 'users')
+
+// deleteData(3, 'users')
+
+// updateData(2,user,'users')
