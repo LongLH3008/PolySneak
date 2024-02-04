@@ -11,6 +11,8 @@ import DetailProductHandler from "./handler/detailproduct";
 import SignInHandler from "./handler/signin";
 import ActiveStatus from "./handler/activeStatus";
 import { sendRequest, getData, deleteData, updateData, createData } from './admin/handleCRUD.js';
+import HomeAdminPage from "./adminPages/home.js";
+import ProductsAdminPage from "./adminPages/products.js";
 
 const render = (container, components) => document.querySelector(container).innerHTML = components
 
@@ -42,20 +44,23 @@ router.on('/detailproduct/:id', ({ data }) => {
   DetailProductHandler();
 })
 
+router.on('/admin', () => render('#app', HomeAdminPage()))
+router.on('/admin/products', () => render('#app', ProductsAdminPage()))
+
 router.notFound = () => render('#app', ErrorPage())
 
 router.resolve();
 
 ActiveStatus();
 
-const check = await getData('users');
-console.log(check);
+// const check = await getData('users');
+// console.log(check);
 
-const user = {
-  id: '',
-  username: 'admin2@polysneak',
-  password: '456'
-}
+// const user = {
+//   id: '',
+//   username: 'admin2@polysneak',
+//   password: '456'
+// }
 
 // createData(user, 'users')
 

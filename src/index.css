@@ -53,3 +53,17 @@
 #userStatus:hover > #dropdownuser {
     display: block;
 }
+
+/* Ẩn thanh cuộn trên Chrome và Safari */
+.overscrollHidden::-webkit-scrollbar {
+    width: 0;
+}
+
+.overscrollHidden::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Hiển thị thanh cuộn trên hover */
+.overscrollHidden:hover::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
