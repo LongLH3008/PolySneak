@@ -1,13 +1,14 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "admin@polysneak",
+      "id": 2,
+      "username": "admin@123",
       "password": "123",
-      "rule": "admin"
+      "rule": "admin",
+      "cart": []
     },
     {
-      "id": 2,
+      "id": 3,
       "username": "longlhph31572@fpt.edu.vn",
       "password": "123",
       "rule": "customer",

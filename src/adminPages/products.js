@@ -15,9 +15,9 @@ ${sideNav()}
             <li class="w-1/3 border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">Price</li>
             <li class="w-full border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold col-span-3">Color / Size / Images</li>
             <li class="w-2/3  border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">Description</li>
-            <button class="w-1/3 bg-gradient-to-bl from-orange-500 to-amber-400 hover:bg-gradient-to-tr text-2xl rounded-md text-white">
+            <a href="/admin/addProduct" class="w-1/3 h-full items-center flex justify-center bg-gradient-to-bl from-orange-500 to-amber-400 hover:bg-gradient-to-tr text-2xl rounded-md text-white">
                 <i class="fa-regular fa-square-plus"></i> 
-            </button>
+            </a>
         </ul>
         <div class="overscrollHidden overflow-y-scroll scroll-smooth flex flex-col gap-y-1">
             ${dataProducts.map(pd => `

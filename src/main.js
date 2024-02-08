@@ -14,7 +14,10 @@ import { sendRequest, getData, deleteData, updateData, createData } from './admi
 import HomeAdminPage from "./adminPages/home.js";
 import ProductsAdminPage from "./adminPages/products.js";
 
-import { render , router } from "../utils/index.js";
+import { render, router } from "../utils/index.js";
+import UsersAdminPage from "./adminPages/users.js";
+import addUser from "./adminPages/addUser.js";
+import { AddUser , changeRules, deleteUser } from "./handler/user.js";
 
 router.on('/', () => render('#app', HomePage()));
 
@@ -45,23 +48,19 @@ router.on('/detailproduct/:id', ({ data }) => {
 router.on('/admin', () => render('#app', HomeAdminPage()));
 router.on('/admin/products', () => render('#app', ProductsAdminPage()));
 
+router.on('/admin/users', () => {
+  render('#app', UsersAdminPage());
+  changeRules();
+  deleteUser();
+})
+
+router.on('/admin/addUser', () => {
+  render('#app', addUser())
+  AddUser();
+})
+
 router.notFound = () => render('#app', ErrorPage())
 
 router.resolve();
 
 ActiveStatus();
-
-// const check = await getData('users');
-// console.log(check);
-
-// const user = {
-//   id: '',
-//   username: 'admin2@polysneak',
-//   password: '456'
-// }
-
-// createData(user, 'users')
-
-// deleteData(3, 'users')
-
-// updateData(2,user,'users')

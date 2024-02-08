@@ -32,14 +32,14 @@ export async function createData(data, enpoint) {
 
 export async function updateData(id, data, enpoint) {
     try {
-        const response = await sendRequest('PUT', `${enpoint}/${id}`, data);
+        const response = sendRequest('PUT', `${enpoint}/${id}`, data);
     }
     catch (err) { console.log("Error: " + err) }
 }
 
 export async function deleteData(id, enpoint) {
     try {
-        const response = await sendRequest('DELETE', `${enpoint}/${id}`);
+        const response = sendRequest('DELETE', `${enpoint}/${id}`);
     }
     catch (err) { console.log("Error: " + err) }
 }
