@@ -15,6 +15,7 @@ const sideNav = () => {
     <li class="p-10 py-5 text-zinc-50 w-full hover:*:translate-x-2 hover:bg-gradient-to-br hover:from-orange-500 hover:to-amber-400"><a class="" href="/admin/users"><i class="w-1/6 fa-solid fa-users"></i> Users</a></li>
     <li class="p-10 py-5 text-zinc-50 w-full hover:*:translate-x-2 hover:bg-gradient-to-br hover:from-orange-500 hover:to-amber-400"><a class="" href="/admin/order"><i class="w-1/6 fa-solid fa-box"></i> Order</a></li>
     <li class="p-10 py-5 text-zinc-50 w-full hover:*:translate-x-2 hover:bg-gradient-to-br hover:from-orange-500 hover:to-amber-400"><a class="" href="/admin/bill"><i class="w-1/6 fa-solid fa-clipboard-list"></i> Bill</a></li>
+    <li class="p-10 py-5 text-zinc-50 w-full hover:*:translate-x-2 hover:bg-gradient-to-br hover:from-orange-500 hover:to-amber-400"><a class="" href="/signout"><i class="w-1/6 fa-solid fa-power-off"></i> Sign out</a></li>
 </ul>
 </div>
 `

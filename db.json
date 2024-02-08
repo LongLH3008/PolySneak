@@ -3,7 +3,15 @@
     {
       "id": 1,
       "username": "admin@polysneak",
-      "password": "123"
+      "password": "123",
+      "rule": "admin"
+    },
+    {
+      "id": 2,
+      "username": "longlhph31572@fpt.edu.vn",
+      "password": "123",
+      "rule": "customer",
+      "cart": []
     }
   ],
   "status": [

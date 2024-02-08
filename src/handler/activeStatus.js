@@ -22,24 +22,36 @@ const ActiveStatus = () => {
                                 <img class="w-1/5" src="./assets/img/logo.png" alt="">${(dataUsers.username.split('@'))[0]}
                             </a>
                         </li>
-                        <li>
-                            <a href=""
-                                class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
-                                <i class="fa-solid fa-bag-shopping"></i><span>Cart</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href=""
-                                class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
-                                <i class="fa-solid fa-clipboard-list"></i></i><span>Your Order</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href=""
-                                class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
-                                <i class="fa-solid fa-heart"></i></i>Favorite
-                            </a>
-                        </li>
+                        ${dataUsers.rule == 'admin'
+                            ? `
+                            <li>
+                                <a href="/admin"
+                                    class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
+                                    <i class="fa-solid fa-user-gear"></i><span>Administrator</span>
+                                </a>
+                            </li>
+                            `
+                            : `
+                            <li>
+                                <a href=""
+                                    class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
+                                    <i class="fa-solid fa-bag-shopping"></i><span>Cart</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
+                                    <i class="fa-solid fa-clipboard-list"></i></i><span>Your Order</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
+                                    <i class="fa-solid fa-heart"></i></i>Favorite
+                                </a>
+                            </li>
+                            `
+                        }
                         <li>
                             <a href="/signout"
                                 class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">

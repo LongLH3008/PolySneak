@@ -1,4 +1,4 @@
-import Navigo from "navigo";
+// import Navigo from "navigo";
 import HomePage from "./pages/home";
 import DetailProductPage from "./pages/details_product";
 import ContactPage from "./pages/contact";
@@ -14,9 +14,7 @@ import { sendRequest, getData, deleteData, updateData, createData } from './admi
 import HomeAdminPage from "./adminPages/home.js";
 import ProductsAdminPage from "./adminPages/products.js";
 
-const render = (container, components) => document.querySelector(container).innerHTML = components
-
-const router = new Navigo('/', { linkSelector: 'a' });
+import { render , router } from "../utils/index.js";
 
 router.on('/', () => render('#app', HomePage()));
 
@@ -44,8 +42,8 @@ router.on('/detailproduct/:id', ({ data }) => {
   DetailProductHandler();
 })
 
-router.on('/admin', () => render('#app', HomeAdminPage()))
-router.on('/admin/products', () => render('#app', ProductsAdminPage()))
+router.on('/admin', () => render('#app', HomeAdminPage()));
+router.on('/admin/products', () => render('#app', ProductsAdminPage()));
 
 router.notFound = () => render('#app', ErrorPage())
 

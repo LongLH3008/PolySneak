@@ -34,7 +34,9 @@ const SignUpHandler = () => {
         let adduser = {
             id: '',
             username: usernameSignup,
-            password: passwordSignup
+            password: passwordSignup,
+            rule: 'customer',
+            cart: []
         }
 
         data.forEach(dt => {
