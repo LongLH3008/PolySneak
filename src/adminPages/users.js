@@ -3,14 +3,14 @@ import sideNav from "../admin/sideNav"
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD';
 
 const dataUsers = await getData('users');
-const presentUser = JSON.parse(localStorage.getItem('user')).username;
-
+const check = JSON.parse(localStorage.getItem('user'));
+const presentUser =  (check) ? JSON.parse(localStorage.getItem('user')).username : ''
 
 const UsersAdminPage = () =>`
 <section class="w-full h-screen bg-zinc-100 overflow-hidden flex justify-between items-start">
 ${sideNav()}
 <div class="w-5/6 h-full flex justify-center items-center p-10 text-zinc-600">
-    <ul class="w-full h-3/4 shadow-md rounded-sm flex flex-col gap-y-1">
+    <ul class="w-full h-3/4 rounded-sm flex flex-col gap-y-1">
         <ul class="flex columns-8 gap-1">
             <li class="w-1/12 border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">#</li>
             <li class="w-2/3 border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">Username</li>
@@ -26,7 +26,7 @@ ${sideNav()}
                 <li class="w-2/3 border border-zinc-300 text-center flex items-start justify-start p-3">${pd.username}</li>
                 <li class="w-1/3 border border-zinc-300">
                     <form id="changeRule_user${pd.id}" class="w-full h-full flex items-start justify-between text-start p-3">
-                        <select name="setRule" class="hidden w-8/12 outline-none border focus:border-orange-500 rounded-md p-3 px-4">
+                        <select name="setRule" class="hidden w-8/12 outline-none border focus:border-orange-500 rounded-md p-2 px-3">
                             <option value="${pd.rule}" selected>${pd.rule}</option>
                             <option value="${pd.rule == 'admin' ? 'customer' : 'admin'}">${pd.rule == 'admin' ? 'customer' : 'admin'}</option>
                         </select>

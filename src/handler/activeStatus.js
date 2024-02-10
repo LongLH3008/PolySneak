@@ -1,16 +1,14 @@
+import { getData } from "../admin/handleCRUD";
+const data = await getData('users')
 
 const ActiveStatus = () => {
     const userStatus = document.getElementById('userStatus');
-    const check = JSON.parse(localStorage.getItem('user'));
+    const check = JSON.parse(localStorage.getItem('user')).username;
 
     if (check) {
-        const api = 'http://localhost:3000/users'
-        fetch(api)
-            .then(response => response.json())
-            .then(function (data) {
-                const dataUsers = data.find(dt => dt.username === check.username)
-                console.log(dataUsers);
-                userStatus.innerHTML = `
+        const dataUsers = data.find(dt => dt.username === check)
+        // console.log(dataUsers);
+        userStatus.innerHTML = `
                 <div id="activeUser" class="cursor-pointer p-2 px-3 rounded-tr-md rounded-tl-md border-b-0 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white">
                     <i class="fa-solid fa-circle-user text-2xl"></i>
                 </div>
@@ -23,7 +21,7 @@ const ActiveStatus = () => {
                             </a>
                         </li>
                         ${dataUsers.rule == 'admin'
-                            ? `
+                ? `
                             <li>
                                 <a href="/admin"
                                     class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
@@ -31,9 +29,9 @@ const ActiveStatus = () => {
                                 </a>
                             </li>
                             `
-                            : `
+                : `
                             <li>
-                                <a href=""
+                                <a href="/cart"
                                     class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
                                     <i class="fa-solid fa-bag-shopping"></i><span>Cart</span>
                                 </a>
@@ -51,7 +49,7 @@ const ActiveStatus = () => {
                                 </a>
                             </li>
                             `
-                        }
+            }
                         <li>
                             <a href="/signout"
                                 class="h-full w-full p-3 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white flex justify-start gap-x-2 items-center">
@@ -61,8 +59,8 @@ const ActiveStatus = () => {
                     </ul>
                 </div>    
                 `
-            })
-            .catch(function (err) { console.log(err); })
+    } else {
+        userStatus.innerHTML = '<a href="/signin" class="p-2 px-3 rounded-md hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white"><i class="fa-solid fa-key"></i></a>'
     }
 }
 export default ActiveStatus

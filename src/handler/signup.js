@@ -61,7 +61,7 @@ const SignUpHandler = () => {
     const signupForm = document.getElementById('signup');
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        signup();
+        signin()
     })
 }
 export default SignUpHandler

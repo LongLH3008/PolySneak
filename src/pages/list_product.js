@@ -1,13 +1,16 @@
 import HeaderComponent from "../components/header"
 import FooterComponent from "../components/footer"
-import { products } from '../../db.json' assert { type: "json"}
 import { status } from '../../db.json' assert { type: "json"}
+import { getData } from "../admin/handleCRUD";
+
+const products = await getData('products');
+// console.log(products);
 
 const ListProductPage = () => {
     const checkStatus = (id) => {
         const result = status.find(st => st.id == id)
         const { name } = result
-        console.log(name);
+        // console.log(name);
         return name
     }
     return `

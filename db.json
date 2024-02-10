@@ -12,7 +12,43 @@
       "username": "longlhph31572@fpt.edu.vn",
       "password": "123",
       "rule": "customer",
-      "cart": []
+      "cart": [
+        {
+          "id": 1,
+          "idpro": 1,
+          "attribute": 1,
+          "size": 42,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "idpro": 2,
+          "attribute": 1,
+          "size": 42,
+          "amount": 1
+        },
+        {
+          "id": 3,
+          "idpro": 3,
+          "attribute": 1,
+          "size": 42,
+          "amount": 1
+        },
+        {
+          "id": 4,
+          "idpro": 4,
+          "attribute": 1,
+          "size": 42,
+          "amount": 1
+        },
+        {
+          "id": 5,
+          "idpro": 5,
+          "attribute": 1,
+          "size": 42,
+          "amount": 1
+        }
+      ]
     }
   ],
   "status": [

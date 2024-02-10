@@ -50,7 +50,7 @@
     display: none;
 }
 
-#userStatus:hover > #dropdownuser {
+#userStatus:hover>#dropdownuser {
     display: block;
 }
 
@@ -66,4 +66,15 @@
 /* Hiển thị thanh cuộn trên hover */
 .overscrollHidden:hover::-webkit-scrollbar-thumb {
     background-color: #888;
+}
+
+#order_info {
+    max-height: 50vh;
+}
+
+#cart_info {
+    max-height: 70vh;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to top right, rgb(249 115 22), rgb(251 191 36)) 0 1 0 0 stretch;
 }

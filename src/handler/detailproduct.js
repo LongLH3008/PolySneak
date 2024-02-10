@@ -11,7 +11,7 @@ const DetailProductHandler = () => {
                 e.classList.add('border-orange-500');
                 inputValue = e.dataset.color;
                 imgProd.src = e.dataset.img;
-                console.log(e.dataset.img);
+                // console.log(e.dataset.img);
             })
         })
     }

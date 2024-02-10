@@ -5,7 +5,7 @@ const sideNav = () => {
 <div class="w-1/6 bg-gradient-to-bl from-zinc-700 to-gray-500 h-full">
 <ul class="flex flex-col h-full w-full font-semibold">
     <li class="">
-        <a href="/admin" class="p-10 flex justify-start items-center gap-x-3 mb-20">
+        <a href="/" class="p-10 flex justify-start items-center gap-x-3 mb-20">
             <img class="w-1/4" src="${logo}" alt="">
             <h1 class="text-white text-2xl">PolySneak</h1>
         </a>

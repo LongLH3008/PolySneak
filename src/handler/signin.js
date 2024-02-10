@@ -1,3 +1,4 @@
+
 const SignInHandler = () => {
     const api = 'http://localhost:3000/users';
 
@@ -40,6 +41,7 @@ const SignInHandler = () => {
     const signinForm = document.getElementById('signin');
     signinForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        const check = localStorage.getItem('users');
         signin()
     })
 }

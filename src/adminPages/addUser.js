@@ -10,7 +10,7 @@ ${sideNav()}
             <input name="pass" type="password" class="w-full mb-2 outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Pass***" required/>
             <input name="repass" type="password" class="w-full mb-2 outline-none border focus:border-orange-500 rounded-md p-3 px-4" placeholder="Repass" required/>
             <select name="rule" class="w-full mb-2 outline-none border focus:border-orange-500 rounded-md p-3 px-4 text-zinc-500 font-normal">
-                <option value="" selected>Choose rule</option>
+                <option value="" selected="true">Choose rule</option>
                 <option value="customer" selected>Customer</option>
                 <option value="admin" selected>Admin</option>
             </select>

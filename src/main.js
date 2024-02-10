@@ -17,9 +17,28 @@ import ProductsAdminPage from "./adminPages/products.js";
 import { render, router } from "../utils/index.js";
 import UsersAdminPage from "./adminPages/users.js";
 import addUser from "./adminPages/addUser.js";
-import { AddUser , changeRules, deleteUser } from "./handler/user.js";
+import { AddUser, changeRules, deleteUser } from "./handler/user.js";
+import CartPage from "./pages/cart.js";
 
-router.on('/', () => render('#app', HomePage()));
+router.on('/', () => {
+  render('#app', HomePage())
+  ActiveStatus();
+});
+
+router.on('/contact', () => {
+  render('#app', ContactPage())
+  ActiveStatus();
+});
+
+router.on('/product', () => {
+  render('#app', ListProductPage())
+  ActiveStatus();
+});
+
+router.on('/cart', () => {
+  render('#app', CartPage())
+  ActiveStatus();
+});
 
 router.on('/signin', () => {
   render('#app', SigninPage());
@@ -37,12 +56,10 @@ router.on('/signout', () => {
   router.navigate('/')
 });
 
-router.on('/contact', () => render('#app', ContactPage()));
-router.on('/product', () => render('#app', ListProductPage()));
-
 router.on('/detailproduct/:id', ({ data }) => {
   render('#app', DetailProductPage(data.id));
   DetailProductHandler();
+  ActiveStatus();
 })
 
 router.on('/admin', () => render('#app', HomeAdminPage()));
@@ -62,5 +79,3 @@ router.on('/admin/addUser', () => {
 router.notFound = () => render('#app', ErrorPage())
 
 router.resolve();
-
-ActiveStatus();
