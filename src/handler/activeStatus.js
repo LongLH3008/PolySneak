@@ -1,12 +1,12 @@
+import { user } from "../../utils";
 import { getData } from "../admin/handleCRUD";
 const data = await getData('users')
 
 const ActiveStatus = () => {
     const userStatus = document.getElementById('userStatus');
-    const check = JSON.parse(localStorage.getItem('user')).username;
 
-    if (check) {
-        const dataUsers = data.find(dt => dt.username === check)
+    if (user) {
+        const dataUsers = data.find(dt => dt.username === user)
         // console.log(dataUsers);
         userStatus.innerHTML = `
                 <div id="activeUser" class="cursor-pointer p-2 px-3 rounded-tr-md rounded-tl-md border-b-0 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white">

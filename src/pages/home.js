@@ -13,6 +13,8 @@ const HomePage = () => `
         <div class="flex justify-between items-center gap-0 flex-wrap">
             ${newProducts.map(pro => `
                 <div class="w-72 rounded-md shadow-md border-2 text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
+                    <input name="size_pro_home${pro.id}" type="hidden" value="${pro.attribute[0].sizes[0]}" />
+                    <input name="attribute_pro_home${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
                     <div class="w-full overflow-hidden p-3 border-b">
                         <a href='/detailproduct/${pro.id}'>
                             <img class="w-full rounded-md" src="${pro.img}" alt="${pro.name}">
@@ -28,7 +30,7 @@ const HomePage = () => `
                                 <span class="cost ${pro.discount > 0 ? 'line-through text-orange-400' : ''}">${pro.cost.toLocaleString('en-US')} đ</span><br>  
                                 <span class="">${pro.discount > 0 ? ((100 - pro.discount) * pro.cost / 100).toLocaleString('en-US') + ' đ' : ''}</span>
                             </p>
-                            <button
+                            <button data-home="${pro.id}" id="home_add_to_cart${pro.id}"
                                 class="p-2 px-3 rounded-md bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">Order</button>
                         </li>
                     </ul>

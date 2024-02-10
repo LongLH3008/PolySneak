@@ -19,9 +19,11 @@ import UsersAdminPage from "./adminPages/users.js";
 import addUser from "./adminPages/addUser.js";
 import { AddUser, changeRules, deleteUser } from "./handler/user.js";
 import CartPage from "./pages/cart.js";
+import { HomeAddToCart, ListProdAddToCart, changeAmount, removeProductFromCart } from "./handler/cart.js";
 
 router.on('/', () => {
-  render('#app', HomePage())
+  render('#app', HomePage());
+  HomeAddToCart();
   ActiveStatus();
 });
 
@@ -32,11 +34,21 @@ router.on('/contact', () => {
 
 router.on('/product', () => {
   render('#app', ListProductPage())
+  ListProdAddToCart();
   ActiveStatus();
 });
 
+router.on('/detailproduct/:id', ({ data }) => {
+  render('#app', DetailProductPage(data.id));
+  DetailProductHandler();
+  ActiveStatus();
+})
+
+
 router.on('/cart', () => {
   render('#app', CartPage())
+  changeAmount();
+  removeProductFromCart();
   ActiveStatus();
 });
 
@@ -55,12 +67,6 @@ router.on('/signout', () => {
   alert('See you again !')
   router.navigate('/')
 });
-
-router.on('/detailproduct/:id', ({ data }) => {
-  render('#app', DetailProductPage(data.id));
-  DetailProductHandler();
-  ActiveStatus();
-})
 
 router.on('/admin', () => render('#app', HomeAdminPage()));
 router.on('/admin/products', () => render('#app', ProductsAdminPage()));

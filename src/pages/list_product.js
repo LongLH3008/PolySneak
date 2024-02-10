@@ -21,6 +21,8 @@ const ListProductPage = () => {
 <section class="mt-20 px-48 w-full">
 <div class="flex justify-between items-center gap-y-4 flex-wrap">
     ${products.map(pro => `
+        <input name="attribute_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
+        <input name="size_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].sizes[0]}" />
         <div class="w-72 rounded-lg shadow-md border-2 text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
             <div class="h-56 flex items-center py-5 overflow-hidden border-b">
                 <a href='/detailproduct/${pro.id}' class="">
@@ -40,7 +42,7 @@ const ListProductPage = () => {
                         <span class="${pro.discount > 0 ? '' : 'text-transparent'}">
                             ${pro.discount > 0 ? ((100 - pro.discount) * pro.cost / 100).toLocaleString('en-US') + ' đ' : ''}</span>
                     </p>
-                    <button
+                    <button id="listprod_add_to_cart${pro.id}"
                         class="p-2 px-3 rounded-md bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">
                         <i class="fa-solid fa-cart-arrow-down"></i>
                         </button>
