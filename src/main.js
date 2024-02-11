@@ -19,7 +19,7 @@ import UsersAdminPage from "./adminPages/users.js";
 import addUser from "./adminPages/addUser.js";
 import { AddUser, changeRules, deleteUser } from "./handler/user.js";
 import CartPage from "./pages/cart.js";
-import { HomeAddToCart, ListProdAddToCart, changeAmount, removeProductFromCart } from "./handler/cart.js";
+import { DetailProdAddToCart, HomeAddToCart, ListProdAddToCart, changeAmount, removeProductFromCart } from "./handler/cart.js";
 
 router.on('/', () => {
   render('#app', HomePage());
@@ -41,6 +41,7 @@ router.on('/product', () => {
 router.on('/detailproduct/:id', ({ data }) => {
   render('#app', DetailProductPage(data.id));
   DetailProductHandler();
+  DetailProdAddToCart(data.id)
   ActiveStatus();
 })
 

@@ -14,25 +14,32 @@
       "rule": "customer",
       "cart": [
         {
-          "id": 1,
+          "id": "67aaa410-aa12-4320-bcee-f3bbf3ecebb3",
           "idpro": 1,
           "attribute": 1,
           "size": "38",
-          "amount": 4
+          "amount": "2"
         },
         {
-          "id": 3,
-          "idpro": 3,
-          "attribute": 1,
-          "size": "40",
-          "amount": 3
-        },
-        {
-          "id": 4,
+          "id": "f607cda5-8ca0-4854-bcb0-4e05e9fafb9d",
           "idpro": 4,
           "attribute": 1,
           "size": "40",
-          "amount": 2
+          "amount": 4
+        },
+        {
+          "id": "bbbb0460-e464-454d-b1b3-80e63d815580",
+          "idpro": "1",
+          "attribute": "3",
+          "size": "38",
+          "amount": "2"
+        },
+        {
+          "id": "4f51115f-b0d7-41d9-99e9-8961ad036da3",
+          "idpro": "1",
+          "attribute": "2",
+          "size": "42",
+          "amount": "1"
         }
       ]
     },

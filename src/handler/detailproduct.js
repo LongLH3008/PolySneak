@@ -1,5 +1,5 @@
 const DetailProductHandler = () => {
-    const colorValue = document.getElementById('colorValue').values;
+    const colorValue = document.getElementById('colorValue');
     const colorBtn = document.querySelectorAll('.chooseColor');
     const img = document.getElementById('imgProduct')
 
@@ -9,7 +9,8 @@ const DetailProductHandler = () => {
             e.addEventListener('click', () => {
                 colorBtn.map(el => el.classList.remove('border-orange-500'))
                 e.classList.add('border-orange-500');
-                inputValue = e.dataset.color;
+                inputValue.value = e.dataset.color;
+                console.log(inputValue.value);
                 imgProd.src = e.dataset.img;
                 // console.log(e.dataset.img);
             })
@@ -19,7 +20,7 @@ const DetailProductHandler = () => {
 
     // ----------------------------------------------------------------
 
-    const sizeValue = document.getElementById('sizeValue').values;
+    const sizeValue = document.getElementById('sizeValue');
     const sizeBtn = document.querySelectorAll('.chooseSize');
 
     const changeSizeProduct = (arrSizeBtn, inputValue) => {
@@ -27,9 +28,9 @@ const DetailProductHandler = () => {
         colorBtn.map(e => {
             e.addEventListener('click', () => {
                 colorBtn.map(el => el.classList.remove('border-orange-500'))
-                inputValue = e.innerText.toLowerCase();
+                inputValue.value = e.innerText.toLowerCase();
                 e.classList.add('border-orange-500');
-                console.log(inputValue);
+                // console.log(inputValue);
             })
         })
     }

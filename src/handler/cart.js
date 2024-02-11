@@ -1,12 +1,16 @@
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD.js';
 import { user, data, router, products } from "../../utils"
+import { v4 as uuidv4 } from 'uuid';
 
 const AddToCart = (id, size, att = 1, amt = 1) => {
     if (user) {
         const newData = data.find(dt => dt.username == user);
         let cartUser = data.find(dt => dt.username === user).cart;
-        let check = cartUser.filter(c => c.idpro == id);
-        if (check.length > 0) {
+        let checkSize = cartUser.filter(c => c.size == size);
+        let checkAtt = cartUser.filter(c => c.attribute == att);
+
+        if (checkAtt.length > 0 && checkSize.length > 0) {
+            console.log(att);
             cartUser.map(c => {
                 if (c.idpro == id) {
                     let plus = Number(c.amount) + 1;
@@ -16,7 +20,7 @@ const AddToCart = (id, size, att = 1, amt = 1) => {
             })
         } else {
             const newProd = {
-                "id": id,
+                "id": uuidv4(),
                 "idpro": id,
                 "attribute": att,
                 "size": size,
@@ -24,6 +28,8 @@ const AddToCart = (id, size, att = 1, amt = 1) => {
             }
             newData.cart.push(newProd);
         }
+
+        updateData(newData.id, newData, 'users');
 
         setTimeout(() => {
             alert('Added');
@@ -67,10 +73,10 @@ export const HomeAddToCart = () => {
     for (const { id } of products) {
         const add = document.querySelector(`#home_add_to_cart${id}`);
         const size = document.querySelector(`input[name="size_pro_home${id}"`)
-        const att = document.querySelector(`input[name="attribute_pro_home${id}"`)
-        if (add && size && att) {
-            console.log(size.value);
+        // const att = document.querySelector(`input[name="attribute_pro_home${id}"`)
+        if (add && size) {
             add.addEventListener('click', (e) => {
+                // console.log(att.value);
                 e.preventDefault()
                 AddToCart(id, size.value)
             })
@@ -92,4 +98,15 @@ export const ListProdAddToCart = () => {
             })
         }
     }
+}
+
+export const DetailProdAddToCart = (idpro) => {
+    const add = document.querySelector('span[name="add"]');
+    add.addEventListener('click', () => {
+        const amount = document.querySelector('input[name="amount"]').value;
+        const size = document.querySelector('input[name="size"]').value;
+        const att = document.querySelector('input[name="att"]').value;
+        // console.log(Number(size));
+        AddToCart(idpro, size, att, amount)  
+    })
 }
