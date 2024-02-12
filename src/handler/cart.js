@@ -1,6 +1,7 @@
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD.js';
 import { user, data, router, products } from "../../utils"
 import { v4 as uuidv4 } from 'uuid';
+import OrderProds from '../pages/orderProds.js';
 
 const AddToCart = (id, size, att = 1, amt = 1) => {
     if (user) {
@@ -105,6 +106,7 @@ export const DetailProdAddToCart = (idpro) => {
 }
 
 export const chooseToOrder = () => {
+    const cartUser = data.find(dt => dt.username == user).cart;
     const amount = document.querySelectorAll('.changeAmount');
     const removeProd = document.querySelectorAll('.removeProd');
     const checkall = document.querySelector('span[name="checkall"]');
@@ -112,6 +114,8 @@ export const chooseToOrder = () => {
     const deleteall = document.querySelector('span[name="deleteall"]');
     const allproducts = document.querySelectorAll('.products_in_cart');
     const checkprod = document.querySelectorAll('.checkprod');
+    const order = document.getElementById('right_cart');
+    let arrOrder = [];
     let trans = 0;
 
     for (let index = 0; index < allproducts.length; index++) {
@@ -120,9 +124,32 @@ export const chooseToOrder = () => {
         const checked = checkprod[index];
         const remove = removeProd[index];
         const changeAmount = amount[index];
+        const choose = checked.dataset.idcart
 
         changeAmount.addEventListener('click', () => { isChange = true })
         remove.addEventListener('click', () => { isChange = true })
+
+        function renderOrder() {
+            let orderProds = [];
+            if (arrOrder.length > 0) {
+                arrOrder.map(d => {
+                    for (let index = 0; index < cartUser.length; index++) {
+                        if (cartUser[index].id == d) {
+                            orderProds.push(cartUser[index]);
+                        }
+                    }
+                })
+                order.innerHTML = OrderProds(orderProds)
+            } else {
+                order.innerHTML = `
+                <h1 class="flex justify-between items-center">
+                    <span class="text-2xl font-semibold"><i class="fa-solid fa-box"></i> Order</span>
+                    <span class="p-4 py-2 bg-gradient-to-tr from-zinc-600 to-gray-500 rounded-md text-white"><i class="fa-solid fa-bag-shopping"></i> ${cartUser.reduce((total, { amount }) => Number(amount) + total, 0)}</span>
+                </h1>
+                <ul id="order_info" class="mt-5 p-3 text-zinc-400 overflow-y-scroll overscrollHidden border border-dashed border-zinc-300"></ul>
+                `
+            }
+        }
 
         function hide() {
             pd.classList.contains('bg-zinc-200') && trans < allproducts.length ? trans += 1 : '';
@@ -130,6 +157,9 @@ export const chooseToOrder = () => {
             trans > 0 ? uncheckall.classList.remove('hidden') : uncheckall.classList.add('hidden');
             trans > 0 ? deleteall.classList.remove('hidden') : deleteall.classList.add('hidden');
             trans < allproducts.length ? checkall.classList.remove('hidden') : checkall.classList.add('hidden');
+            pd.classList.contains('bg-zinc-200')
+                ? arrOrder.push(choose)
+                : arrOrder = arrOrder.filter(a => a !== choose)
             // console.log(trans);
         }
 
@@ -141,7 +171,8 @@ export const chooseToOrder = () => {
                 pd.classList.toggle('bg-zinc-200');
                 pd.classList.toggle('ps-3');
                 uncheckall.classList.remove('hidden')
-                hide()
+                hide();
+                renderOrder();
             }
         })
 
@@ -153,6 +184,7 @@ export const chooseToOrder = () => {
             checked.classList.remove('hidden')
             pd.classList.add('bg-zinc-200', 'ps-3');
             hide()
+            renderOrder();
         })
 
         uncheckall.addEventListener('click', () => {
@@ -163,6 +195,7 @@ export const chooseToOrder = () => {
             checked.classList.add('hidden')
             pd.classList.remove('bg-zinc-200', 'ps-3');
             hide();
+            renderOrder();
         })
     }
 

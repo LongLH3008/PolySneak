@@ -21,11 +21,18 @@
       "rule": "customer",
       "cart": [
         {
-          "id": "2580bc68-c981-406a-82f8-429649c8a6d5",
-          "idpro": 2,
+          "id": "d221ea91-cfa5-4f12-a5e1-3b0bf9a88700",
+          "idpro": 4,
           "attribute": 1,
-          "size": "39",
-          "amount": 1
+          "size": "40",
+          "amount": "2"
+        },
+        {
+          "id": "750e5e1d-80aa-4939-a043-7c766ced9909",
+          "idpro": "4",
+          "attribute": "3",
+          "size": "40",
+          "amount": "2"
         }
       ]
     },

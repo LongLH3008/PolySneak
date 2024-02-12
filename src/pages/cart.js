@@ -48,7 +48,7 @@ const CartPage = () => {
 ${HeaderComponent()}
 </section>
 <section class="mt-10 px-48">
-<form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600">
+<form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600 min-h-screen">
     <div id="left_cart" class="w-8/12">
         <div class="flex justify-between mb-2 items-center">
             <h1 class="text-3xl font-semibold text-orange-400"><i class="fa-solid fa-cart-shopping"></i> Cart</h1>
@@ -97,31 +97,10 @@ ${HeaderComponent()}
     </div>
     <div id="right_cart" class="w-4/12">
         <h1 class="flex justify-between items-center">
-                <span class="text-2xl font-semibold"><i class="fa-solid fa-box"></i> Order</span>
-            <span class="p-4 py-2 bg-gradient-to-tr from-zinc-600 to-gray-500 rounded-md text-white"><i class="fa-solid fa-bag-shopping"></i> ${cartUser.reduce((total, { amount }) => Number(amount) + total, 0)}</span>
-        </h1>
-        <ul id="order_info" class="mt-5 p-3 text-zinc-400 overflow-y-scroll overscrollHidden border border-dashed border-zinc-300">
-            ${cartUser.map(c => `
-            <li class="flex justify-between items-end py-2 border-b border-dashed">
-                <div class="flex flex-col">
-                    <p>${name(c.idpro)}<br>
-                        <span class="text-sm">${color(c.idpro, c.attribute) + ' - ' + c.size}</span>
-                    </p>
-                    <span class="line-through text-orange-400">${discount(c.idpro) > 0 ? cost(c.idpro).toLocaleString('en-US') + ' đ' : ''}</span>
-                    <span class="font-semibold">${discount(c.idpro) > 0 ? calcDiscount(c.idpro).toLocaleString('en-US') + ' đ' : cost(c.idpro).toLocaleString('en-US')}</span>
-                </div>
-                <div class="flex flex-col items-end">
-                    <p>${c.amount > 5 ? 'x ' + 5 : 'x ' + c.amount}</p>
-                    <span class="text-orange-400">${discount(c.idpro) > 0 ? '- ' + discount(c.idpro) + ' %' : ''}</span>
-                    <span class="font-semibold">${calcCost(c.idpro, c.amount).toLocaleString('en-US') + ' đ'}</span>
-                </div>
-            </li>
-            `).join('')}
-        </ul>
-        <button type="submit" class="cursor-pointer mt-5 font-semibold flex justify-between items-center text-white w-full p-5 bg-gradient-to-br from-amber-400 to-orange-500 hover:bg-gradient-to-tl border-0">
-            <span><i class="fa-solid fa-cash-register"></i> Pay</span>
-            <span>${'Total ' + calcTotal(cartUser).toLocaleString('en-US') + ' đ'}</span>
-        </button>
+        <span class="text-2xl font-semibold"><i class="fa-solid fa-box"></i> Order</span>
+        <span class="p-4 py-2 bg-gradient-to-tr from-zinc-600 to-gray-500 rounded-md text-white"><i class="fa-solid fa-bag-shopping"></i> ${cartUser.reduce((total, { amount }) => Number(amount) + total, 0)}</span>
+    </h1>
+    <ul id="order_info" class="mt-5 p-3 text-zinc-400 overflow-y-scroll overscrollHidden border border-dashed border-zinc-300"></ul>
     </div>
 </form>
 </section>
