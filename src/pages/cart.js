@@ -5,7 +5,6 @@ import { user, data, products } from "../../utils"
 
 const CartPage = () => {
     const cartUser = data.find(dt => dt.username == user).cart;
-    // console.log(cartUser);
     const name = (id) => products.find(dt => dt.id == id).name
     const discount = (id) => products.find(dt => dt.id == id).discount;
     const cost = (id) => products.find(dt => dt.id == id).cost;
@@ -51,12 +50,20 @@ ${HeaderComponent()}
 <section class="mt-10 px-48">
 <form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600">
     <div id="left_cart" class="w-8/12">
-        <h1 class="text-3xl font-semibold text-orange-400"><i class="fa-solid fa-cart-shopping"></i> Cart</h1>
-        <ul id="cart_info" class="pt-10 overscrollHidden overflow-y-scroll pr-5 border-r-2">
+        <div class="flex justify-between mb-2 items-center">
+            <h1 class="text-3xl font-semibold text-orange-400"><i class="fa-solid fa-cart-shopping"></i> Cart</h1>
+            <div>
+                <span name="checkall" class="cursor-pointer p-3 py-2 bg-gradient-to-tr hover:bg-gradient-to-bl from-zinc-700 to-gray-500 text-white "><i class="fa-solid fa-check"></i> Check All</span>
+                <span name="uncheckall" class="hidden cursor-pointer p-3 py-2 bg-gradient-to-tr hover:bg-gradient-to-bl from-zinc-700 to-gray-500 text-white "><i class="fa-solid fa-mark"></i> Uncheck All</span>
+                <span name="deleteall" class="hidden cursor-pointer p-3 py-2 bg-gradient-to-tr hover:bg-gradient-to-bl from-red-600 to-rose-400 text-white "><i class="fa-solid fa-xmark"></i> Remove All</span>
+            </div>
+        </div>
+        <ul id="cart_info" class="pt-5 overscrollHidden overflow-y-scroll pr-5 border-r-2">
             ${cartUser.length > 0
             ? `
             ${cartUser.map(c => `
-            <li class="p-3 ps-0 flex justify-start gap-5 items-center border-b border-dashed border-zinc-300">
+            <li class="products_in_cart relative mb-1 cursor-pointer pt-3 pb-3 pr-3 flex justify-start gap-5 items-center border-b border-dashed">
+                <span data-idcart=${c.id} class="checkprod hidden"><i class="fa-solid fa-check"></i></span>
                 <div class="w-2/12 h-28 flex items-center overflow-hidden rounded-md">
                     <a href='/detailproduct/${c.idpro}'>
                         <img src="${img(c.idpro, c.attribute)}" class="w-full" alt="${name(c.idpro)}">
@@ -74,8 +81,8 @@ ${HeaderComponent()}
                 </div>
                 <div class="w-3/12 h-3/12 flex items-center justify-center gap-2">
                     <input name="" type="hideen" class="hidden">
-                    <input name="change_amount${c.id}" type="number" class="text-center text-xl border w-4/12 p-2 ps-5 outline-none active:border-orange-500" value="${c.amount > 5 ? 5 : c.amount}" min="1" max="5">
-                    <span name="remove_prod${c.id}" class="p-2 cursor-pointer text-white bg-gradient-to-br hover:bg-gradient-to-tl from-red-500 to-rose-400"><i class="fa-solid fa-xmark"></i></span>
+                    <input name="change_amount${c.id}" type="number" class="changeAmount text-center text-zinc-600 text-xl border w-4/12 p-2 ps-5 outline-none active:border-orange-500" value="${c.amount > 5 ? 5 : c.amount}" min="1" max="5">
+                    <span name="remove_prod${c.id}" class="removeProd p-2 cursor-pointer text-white bg-gradient-to-br hover:bg-gradient-to-tl from-red-500 to-rose-400"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </li>
             `).join('')}
@@ -90,8 +97,8 @@ ${HeaderComponent()}
     </div>
     <div id="right_cart" class="w-4/12">
         <h1 class="flex justify-between items-center">
-                <span class="text-2xl font-semibold">Order</span>
-            <span class="p-4 py-2 bg-gradient-to-tr from-zinc-600 to-gray-500 rounded-md text-white text-sm">Amount : ${cartUser.reduce((total, { amount }) => Number(amount) + total, 0)}</span>
+                <span class="text-2xl font-semibold"><i class="fa-solid fa-box"></i> Order</span>
+            <span class="p-4 py-2 bg-gradient-to-tr from-zinc-600 to-gray-500 rounded-md text-white"><i class="fa-solid fa-bag-shopping"></i> ${cartUser.reduce((total, { amount }) => Number(amount) + total, 0)}</span>
         </h1>
         <ul id="order_info" class="mt-5 p-3 text-zinc-400 overflow-y-scroll overscrollHidden border border-dashed border-zinc-300">
             ${cartUser.map(c => `
@@ -112,8 +119,8 @@ ${HeaderComponent()}
             `).join('')}
         </ul>
         <button type="submit" class="cursor-pointer mt-5 font-semibold flex justify-between items-center text-white w-full p-5 bg-gradient-to-br from-amber-400 to-orange-500 hover:bg-gradient-to-tl border-0">
-            <span><i class="fa-solid fa-cash-register"></i> Total</span>
-            <span>${calcTotal(cartUser).toLocaleString('en-US') + ' đ'}</span>
+            <span><i class="fa-solid fa-cash-register"></i> Pay</span>
+            <span>${'Total ' + calcTotal(cartUser).toLocaleString('en-US') + ' đ'}</span>
         </button>
     </div>
 </form>

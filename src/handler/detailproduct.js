@@ -10,9 +10,8 @@ const DetailProductHandler = () => {
                 colorBtn.map(el => el.classList.remove('border-orange-500'))
                 e.classList.add('border-orange-500');
                 inputValue.value = e.dataset.color;
-                console.log(inputValue.value);
                 imgProd.src = e.dataset.img;
-                // console.log(e.dataset.img);
+                console.log(e.dataset.color);
             })
         })
     }
@@ -30,7 +29,7 @@ const DetailProductHandler = () => {
                 colorBtn.map(el => el.classList.remove('border-orange-500'))
                 inputValue.value = e.innerText.toLowerCase();
                 e.classList.add('border-orange-500');
-                // console.log(inputValue);
+                // console.log(inputValue.value);
             })
         })
     }

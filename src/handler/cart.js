@@ -6,11 +6,14 @@ const AddToCart = (id, size, att = 1, amt = 1) => {
     if (user) {
         const newData = data.find(dt => dt.username == user);
         let cartUser = data.find(dt => dt.username === user).cart;
-        let checkSize = cartUser.filter(c => c.size == size);
-        let checkAtt = cartUser.filter(c => c.attribute == att);
+        let checkId = cartUser.find(c => c.idpro == id);
+        let checkSize = checkId?.size == size
+        let checkAtt = checkId?.attribute == att
 
-        if (checkAtt.length > 0 && checkSize.length > 0) {
-            console.log(att);
+        console.log(`inputSize: ${size} - compare data: ${checkId?.size}`);
+        console.log(`inputAtt: ${att} - compare data: ${checkId?.attribute}`);
+
+        if (checkAtt && checkSize) {
             cartUser.map(c => {
                 if (c.idpro == id) {
                     let plus = Number(c.amount) + 1;
@@ -28,12 +31,7 @@ const AddToCart = (id, size, att = 1, amt = 1) => {
             }
             newData.cart.push(newProd);
         }
-
         updateData(newData.id, newData, 'users');
-
-        setTimeout(() => {
-            alert('Added');
-        }, 500)
     } else {
         alert('Please sign in first !');
         setTimeout(() => {
@@ -73,10 +71,8 @@ export const HomeAddToCart = () => {
     for (const { id } of products) {
         const add = document.querySelector(`#home_add_to_cart${id}`);
         const size = document.querySelector(`input[name="size_pro_home${id}"`)
-        // const att = document.querySelector(`input[name="attribute_pro_home${id}"`)
         if (add && size) {
             add.addEventListener('click', (e) => {
-                // console.log(att.value);
                 e.preventDefault()
                 AddToCart(id, size.value)
             })
@@ -84,14 +80,12 @@ export const HomeAddToCart = () => {
     }
 }
 
-
 export const ListProdAddToCart = () => {
     for (const { id } of products) {
         const add = document.querySelector(`#listprod_add_to_cart${id}`);
         const size = document.querySelector(`input[name="size_pro_listprod${id}"`)
         const att = document.querySelector(`input[name="attribute_pro_listprod${id}"`)
         if (add && size && att) {
-            console.log(size.value);
             add.addEventListener('click', (e) => {
                 e.preventDefault()
                 AddToCart(id, size.value)
@@ -106,7 +100,99 @@ export const DetailProdAddToCart = (idpro) => {
         const amount = document.querySelector('input[name="amount"]').value;
         const size = document.querySelector('input[name="size"]').value;
         const att = document.querySelector('input[name="att"]').value;
-        // console.log(Number(size));
-        AddToCart(idpro, size, att, amount)  
+        AddToCart(idpro, size, att, amount);
     })
+}
+
+export const chooseToOrder = () => {
+    const amount = document.querySelectorAll('.changeAmount');
+    const removeProd = document.querySelectorAll('.removeProd');
+    const checkall = document.querySelector('span[name="checkall"]');
+    const uncheckall = document.querySelector('span[name="uncheckall"]');
+    const deleteall = document.querySelector('span[name="deleteall"]');
+    const allproducts = document.querySelectorAll('.products_in_cart');
+    const checkprod = document.querySelectorAll('.checkprod');
+    let trans = 0;
+
+    for (let index = 0; index < allproducts.length; index++) {
+        let isChange = false;
+        const pd = allproducts[index];
+        const checked = checkprod[index];
+        const remove = removeProd[index];
+        const changeAmount = amount[index];
+
+        changeAmount.addEventListener('click', () => { isChange = true })
+        remove.addEventListener('click', () => { isChange = true })
+
+        function hide() {
+            pd.classList.contains('bg-zinc-200') && trans < allproducts.length ? trans += 1 : '';
+            !pd.classList.contains('bg-zinc-200') && trans > 0 ? trans -= 1 : '';
+            trans > 0 ? uncheckall.classList.remove('hidden') : uncheckall.classList.add('hidden');
+            trans > 0 ? deleteall.classList.remove('hidden') : deleteall.classList.add('hidden');
+            trans < allproducts.length ? checkall.classList.remove('hidden') : checkall.classList.add('hidden');
+            // console.log(trans);
+        }
+
+        pd.addEventListener('click', (event) => {
+            if (isChange) {
+                event.preventDefault()
+            } else {
+                checked.classList.toggle('hidden')
+                pd.classList.toggle('bg-zinc-200');
+                pd.classList.toggle('ps-3');
+                uncheckall.classList.remove('hidden')
+                hide()
+            }
+        })
+
+        checkall.addEventListener('click', () => {
+            checkall.classList.add('hidden')
+            uncheckall.classList.remove('hidden')
+            deleteall.classList.remove('hidden')
+
+            checked.classList.remove('hidden')
+            pd.classList.add('bg-zinc-200', 'ps-3');
+            hide()
+        })
+
+        uncheckall.addEventListener('click', () => {
+            checkall.classList.remove('hidden')
+            uncheckall.classList.add('hidden')
+            deleteall.classList.add('hidden')
+
+            checked.classList.add('hidden')
+            pd.classList.remove('bg-zinc-200', 'ps-3');
+            hide();
+        })
+    }
+
+    const arrChoose = (checkprod) => {
+        var arr = [];
+        Array.from(checkprod).map(c => {
+            const choose = c.dataset.idcart
+            c.classList.contains('hidden')
+                ? arr.filter(a => a !== choose)
+                : arr.push(choose)
+        })
+        return arr
+    }
+
+    deleteall.addEventListener('click', () => {
+        const newData = data.find(dt => dt.username == user);
+        const cartUser = newData.cart;
+        const deleteArr = arrChoose(checkprod)
+        deleteArr.map(d => {
+            for (let index = 0; index < cartUser.length; index++) {
+                if (cartUser[index].id == d) {
+                    cartUser.splice(cartUser[index], 1);
+                }
+            }
+        })
+        newData.cart = cartUser;
+        updateData(newData.id, newData, 'users')
+    })
+}
+
+export const updateOrder = (arrId) => {
+
 }

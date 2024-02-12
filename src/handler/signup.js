@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+import { createData } from '../admin/handleCRUD';
 const SignUpHandler = () => {
     const api = 'http://localhost:3000/users';
 
@@ -32,7 +34,7 @@ const SignUpHandler = () => {
         let err = '';
 
         let adduser = {
-            id: '',
+            id: uuidv4(),
             username: usernameSignup,
             password: passwordSignup,
             rule: 'customer',
@@ -51,7 +53,8 @@ const SignUpHandler = () => {
 
         if (err === '') {
             alert('Signup success')
-            addNewUser(adduser);
+            // addNewUser(adduser);
+            createData(adduser, 'users');
             window.location.href = '/signin'
         } else {
             alert(err);
@@ -61,7 +64,7 @@ const SignUpHandler = () => {
     const signupForm = document.getElementById('signup');
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        signin()
+        signup()
     })
 }
 export default SignUpHandler
