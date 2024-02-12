@@ -20,6 +20,7 @@ import addUser from "./adminPages/addUser.js";
 import { AddUser, changeRules, deleteUser } from "./handler/user.js";
 import CartPage from "./pages/cart.js";
 import { DetailProdAddToCart, HomeAddToCart, ListProdAddToCart, changeAmount, chooseToOrder, removeProductFromCart } from "./handler/cart.js";
+import { RenderProds } from "./handler/renderProds.js";
 
 router.on('/', () => {
   render('#app', HomePage());
@@ -35,6 +36,7 @@ router.on('/contact', () => {
 router.on('/product', () => {
   render('#app', ListProductPage())
   ListProdAddToCart();
+  RenderProds();
   ActiveStatus();
 });
 
@@ -65,9 +67,9 @@ router.on('/signup', () => {
 })
 
 router.on('/signout', () => {
-  localStorage.removeItem('user');
-  router.navigate('/')
-  alert('See you again !')
+  localStorage.clear();
+    alert('See you again !')
+  window.location.href = '/';
 });
 
 router.on('/admin', () => render('#app', HomeAdminPage()));

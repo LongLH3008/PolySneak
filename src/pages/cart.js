@@ -48,7 +48,7 @@ const CartPage = () => {
 ${HeaderComponent()}
 </section>
 <section class="mt-10 px-48">
-<form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600 min-h-screen">
+<form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600 min-h-96">
     <div id="left_cart" class="w-8/12">
         <div class="flex justify-between mb-2 items-center">
             <h1 class="text-3xl font-semibold text-orange-400"><i class="fa-solid fa-cart-shopping"></i> Cart</h1>

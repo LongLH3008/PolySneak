@@ -6,7 +6,9 @@ const dataUsers = await getData('users');
 const check = JSON.parse(localStorage.getItem('user'));
 const presentUser =  (check) ? JSON.parse(localStorage.getItem('user')).username : ''
 
-const UsersAdminPage = () =>`
+const UsersAdminPage = () => {
+    let count = 0;
+return `
 <section class="w-full h-screen bg-zinc-100 overflow-hidden flex justify-between items-start">
 ${sideNav()}
 <div class="w-5/6 h-full flex justify-center items-center p-10 text-zinc-600">
@@ -19,10 +21,10 @@ ${sideNav()}
                 <i class="fa-regular fa-square-plus"></i> 
             </a>
         </ul>
-        <div class="overscrollHidden overflow-y-scroll scroll-smooth flex flex-col gap-y-1">
+        <div overflow-y-scroll scroll-smooth class="overscrollHidden overflow-y-scroll scroll-smooth flex flex-col gap-y-1">
             ${dataUsers.map(pd => `
             <ul class="flex columns-8 gap-1">
-                <li class="w-1/12 border border-zinc-300 text-center flex items-start justify-center p-3 font-semibold">${pd.id}</li>
+                <li class="w-1/12 border border-zinc-300 text-center flex items-start justify-center p-3 font-semibold">${count+=1}</li>
                 <li class="w-2/3 border border-zinc-300 text-center flex items-start justify-start p-3">${pd.username}</li>
                 <li class="w-1/3 border border-zinc-300">
                     <form id="changeRule_user${pd.id}" class="w-full h-full flex items-start justify-between text-start p-3">
@@ -51,5 +53,5 @@ ${sideNav()}
 </div>
 </section>
 `
-
+}
 export default UsersAdminPage

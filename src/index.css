@@ -72,6 +72,10 @@
     max-height: 50vh;
 }
 
+#renderProds {
+    max-height: 80vh;
+}
+
 #cart_info {
     max-height: 70vh;
     border-width: 4px;

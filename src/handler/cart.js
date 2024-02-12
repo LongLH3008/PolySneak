@@ -1,7 +1,7 @@
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD.js';
 import { user, data, router, products } from "../../utils"
 import { v4 as uuidv4 } from 'uuid';
-import OrderProds from '../pages/orderProds.js';
+import OrderProds from '../components/orderProds.js';
 
 const AddToCart = (id, size, att = 1, amt = 1) => {
     if (user) {
