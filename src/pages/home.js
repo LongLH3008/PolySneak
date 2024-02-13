@@ -17,7 +17,7 @@ const HomePage = () => `
                     <input name="attribute_pro_home${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
                     <div class="w-full overflow-hidden p-3 border-b">
                         <a href='/detailproduct/${pro.id}'>
-                            <img class="w-full rounded-md" src="${pro.img}" alt="${pro.name}">
+                            <img class="w-full rounded-md" src="${pro.attribute[0].img}" alt="${pro.name}">
                         </a>
                     </div>
                     <ul class="p-3">

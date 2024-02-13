@@ -31,11 +31,8 @@ ${sideNav()}
                     <label class="text-md"><i class="fa-solid fa-tag mr-1"></i> Status</label>
                     <select name="sttProd" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4">
                     ${status.map(pd => `
-                        ${pd.name == "none"
-            ? ``
-            : `<option ${pd.id == prod.statusId ? 'selected' : ''} value="${pd.id}">${pd.name}</option>`
-        }
-                    `)}
+                        <option ${pd.id == prod.statusId ? 'selected' : ''} value="${pd.id}">${pd.name}</option>`
+                    )}
                     </select>
                 </div>
             </div>
@@ -66,7 +63,7 @@ ${sideNav()}
                         <span name="removeAtt${e.id}" class="p-2 border active:translate-y-1 active:border-orange-500 hover:border-orange-500 cursor-pointer"><i class="fa-solid fa-trash"></i></span>
                         <div class="w-2/3 grid grid-rows-5">
                             <div class="row-span-2">
-                                <input name="nameAtt${e.id}" type="text" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4" value="${e.color}">
+                                <input name="colorAtt${e.id}" value="${e.color}" type="text" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4">
                             </div>
                             <div class="mt-2 row-span-3 grid grid-cols-5 gap-5">
                                 ${sizes.map(s => `

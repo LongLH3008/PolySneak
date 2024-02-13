@@ -26,23 +26,6 @@ const CartPage = () => {
         return result2.img
     }
 
-    const calcCost = (id, amount) => {
-        const result = products.find(dt => dt.id == id);
-        const calc = result.discount > 0 ? ((100 - result.discount) * result.cost / 100) * amount : result.cost * amount
-        return calc;
-    }
-
-    const calcTotal = (cartUser) => {
-        let calc, total = 0
-        cartUser.forEach(c => {
-            let getid = c.idpro;
-            let getdiscount = discount(getid)
-            calc = getdiscount > 0 ? calcDiscount(getid) : cost(getid);
-            total += calc
-        });
-        return total
-    }
-
     return `
 <section class="w-full px-48 font-semibold">
 ${HeaderComponent()}

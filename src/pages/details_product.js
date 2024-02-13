@@ -27,14 +27,14 @@ return `
 <section class="mt-20 px-48 w-full">
 <div class="flex flex-between items-start gap-x-20 h-fit overflow-hidden">
     <div class="carousel w-5/12 overflow-hidden flex items-center">
-        <img id="imgProduct" width="" src="${prod.img}" alt="">
+        <img id="imgProduct" width="" src="${prod.attribute[0].img}" alt="">
     </div>
     <div class="detailproduct w-7/12 flex flex-col justify-start items-start text-zinc-600">
         <div class="flex justify-between w-full">
             <h1 class="text-3xl text-zinc-600 font-semibold">
                 ${prod.name}
             </h1>
-            ${presentStatus.name !== "none" ? `
+            ${presentStatus.name !== "None" ? `
                 <p class="p-2 px-3 bg-gradient-to-br from-orange-500 to-amber-300 text-white font-semibold">
                     ${presentStatus.name}
                 </p>` : ''
