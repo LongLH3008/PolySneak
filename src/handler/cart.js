@@ -88,8 +88,9 @@ export const ListProdAddToCart = () => {
         const att = document.querySelector(`input[name="attribute_pro_listprod${id}"`)
         if (add && size && att) {
             add.addEventListener('click', (e) => {
+                console.log(att);
                 e.preventDefault()
-                AddToCart(id, size.value)
+                AddToCart(id, size.value, att.value)
             })
         }
     }

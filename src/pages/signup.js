@@ -1,3 +1,4 @@
+
 const SignupPage = () => {
     return `
 <section id="signin" class="relative w-full h-screen flex items-center justify-center bg-gradient-to-tr from-orange-600 to-amber-400">

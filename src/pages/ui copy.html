@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <form id="form" action="" method="POST">
+        Upload
+        <input id="files" type="file">
+        <button type="submit">send</button>
+    </form>
+
+    <button id="get">Getdata</button>
+    <input type="text" placeholder="https://api.cloudinary.com/v1_1/demo/image/upload">
+    <script type="module">
+        const form = document.getElementById('form');
+        const get = document.getElementById('get');
+
+        form.addEventListener('submit', function (e) {
+            const files = document.getElementById('files').files;
+            e.preventDefault();
+            console.log(files);
+            uploadFiles(files[0]); // Chỉ chọn file đầu tiên
+        })
+
+        const uploadFiles = async (file) => {
+            let url = ''
+            let id = '';
+            const CLOUD_NAME = "divbg391d";
+            const PRESET_NAME = "polysneak-upload";
+            const FOLDER_NAME = 'PolySneak';
+            const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+            const api2 = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/oldid`;
+            const formData = new FormData();
+            formData.append('upload_preset', PRESET_NAME);
+            formData.append('folder', FOLDER_NAME);
+            formData.append('file', file);
+
+            const response = await axios
+                .post(api, formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    },
+                })
+            id = response.data.public_id;
+            url = response.data.secure_url;
+            console.log(`public_id: ${id}`);
+            console.log(`secure_url: ${url}`);
+        }
+
+        get.addEventListener('click', function (e) {
+            e.preventDefault();
+            const id = '14bb4bc465d45c511ee9a4766ed59333'
+            getData(id);
+        })
+
+        const getData = async (id) => {
+            const CLOUD_NAME = "divbg391d";
+            const PRESET_NAME = "polysneak-upload";
+            const FOLDER_NAME = 'PolySneak';
+            const imageUrl = 'https://res.cloudinary.com/divbg391d/resources/PolySneak/mhlfzasljkhkhij5itec.jpg'
+            const response = await axios.get(imageUrl, {
+                params: {
+                    api_key: 498569412128891,
+                    api_secret: 'XyHKaLizo-muaRmUJeGjh9JMi_U',
+                }
+            })
+                .then(response => {
+                    console.log('Image information:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error:', error.response ? error.response.data : error.message);
+                });
+        }
+    </script>
+</body>
+
+</html>

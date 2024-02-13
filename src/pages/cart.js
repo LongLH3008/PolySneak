@@ -88,7 +88,7 @@ ${HeaderComponent()}
             `).join('')}
             `
             : `
-            <li class="p-3 ps-0 flex justify-center gap-5 items-center border border-dashed text-center border-zinc-300">
+            <li class="min-h-96 p-3 ps-0 flex justify-center gap-5 items-center border border-dashed text-center border-zinc-300">
                 Your Cart is empty <i class="fa-regular fa-face-sad-tear"></i>
             </li>
             `

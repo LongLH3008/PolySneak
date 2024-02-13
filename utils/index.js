@@ -6,5 +6,7 @@ export const render = (container, components) => document.querySelector(containe
 export const router = new Navigo('/', {linksSelector: 'a'})
 
 export const data = await getData('users')
+export const type = await getData('type')
+export const status = await getData('status')
 export const products = await getData('products');
 export const user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')).username : '' ;

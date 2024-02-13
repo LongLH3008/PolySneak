@@ -10,10 +10,8 @@ import SignUpHandler from "./handler/signup";
 import DetailProductHandler from "./handler/detailproduct";
 import SignInHandler from "./handler/signin";
 import ActiveStatus from "./handler/activeStatus";
-import { sendRequest, getData, deleteData, updateData, createData } from './admin/handleCRUD.js';
 import HomeAdminPage from "./adminPages/home.js";
 import ProductsAdminPage from "./adminPages/products.js";
-
 import { render, router } from "../utils/index.js";
 import UsersAdminPage from "./adminPages/users.js";
 import addUser from "./adminPages/addUser.js";
@@ -21,6 +19,8 @@ import { AddUser, changeRules, deleteUser } from "./handler/user.js";
 import CartPage from "./pages/cart.js";
 import { DetailProdAddToCart, HomeAddToCart, ListProdAddToCart, changeAmount, chooseToOrder, removeProductFromCart } from "./handler/cart.js";
 import { RenderProds } from "./handler/renderProds.js";
+import { updateProd } from "./admin/updateProd.js";
+import EditProdPage from "./adminPages/editProd.js";
 
 router.on('/', () => {
   render('#app', HomePage());
@@ -52,7 +52,7 @@ router.on('/cart', () => {
   render('#app', CartPage())
   changeAmount();
   removeProductFromCart();
-  chooseToOrder()
+  chooseToOrder();
   ActiveStatus();
 });
 
@@ -68,12 +68,20 @@ router.on('/signup', () => {
 
 router.on('/signout', () => {
   localStorage.clear();
-    alert('See you again !')
+  alert('See you again !')
   window.location.href = '/';
 });
 
 router.on('/admin', () => render('#app', HomeAdminPage()));
-router.on('/admin/products', () => render('#app', ProductsAdminPage()));
+
+router.on('/admin/products', () => {
+  render('#app', ProductsAdminPage())
+  updateProd();
+});
+
+router.on('/admin/editprod/:id', ({ data }) => {
+  render('#app', EditProdPage(data.id));
+})
 
 router.on('/admin/users', () => {
   render('#app', UsersAdminPage());

@@ -21,7 +21,7 @@ ${sideNav()}
                 <i class="fa-regular fa-square-plus"></i> 
             </a>
         </ul>
-        <div overflow-y-scroll scroll-smooth class="overscrollHidden overflow-y-scroll scroll-smooth flex flex-col gap-y-1">
+        <div class="overscrollHidden overflow-y-scroll scroll-smooth flex flex-col gap-y-1">
             ${dataUsers.map(pd => `
             <ul class="flex columns-8 gap-1">
                 <li class="w-1/12 border border-zinc-300 text-center flex items-start justify-center p-3 font-semibold">${count+=1}</li>
