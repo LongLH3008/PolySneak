@@ -19,7 +19,7 @@ import { AddUser, changeRules, deleteUser } from "./handler/user.js";
 import CartPage from "./pages/cart.js";
 import { DetailProdAddToCart, HomeAddToCart, ListProdAddToCart, changeAmount, chooseToOrder, removeProductFromCart } from "./handler/cart.js";
 import { RenderProds } from "./handler/renderProds.js";
-import { updateProd } from "./admin/updateProd.js";
+import { editProd, updateProd } from "./admin/updateProd.js";
 import EditProdPage from "./adminPages/editProd.js";
 
 router.on('/', () => {
@@ -81,6 +81,7 @@ router.on('/admin/products', () => {
 
 router.on('/admin/editprod/:id', ({ data }) => {
   render('#app', EditProdPage(data.id));
+  editProd(data.id);
 })
 
 router.on('/admin/users', () => {

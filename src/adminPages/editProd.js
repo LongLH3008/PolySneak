@@ -57,13 +57,13 @@ ${sideNav()}
         </div>
         <div class="col-span-4 flex flex-col overflow-hidden">
             <div class="flex gap-1 justify-end mb-10">
-                <button class="p-3 px-4 border-0 active:translate-y-1 text-white bg-gradient-to-tr hover:bg-gradient-to-bl from-zinc-600 to-gray-500" type="reset"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                <button name="reset" class="p-3 px-4 border-0 active:translate-y-1 text-white bg-gradient-to-tr hover:bg-gradient-to-bl from-zinc-600 to-gray-500" type="reset"><i class="fa-solid fa-arrow-rotate-left"></i></button>
                 <button class="p-3 px-4 border-0 active:translate-y-1 text-white bg-gradient-to-tr hover:bg-gradient-to-bl from-orange-600 to-amber-500" type="submit"><i class="fa-solid fa-check"></i></button>
             </div>
             <ul id="colorsProds" class="h-5/6 overscrollHidden overflow-hidden overflow-y-scroll scroll-smooth flex flex-col gap-y-5">
                 ${prod.attribute.map(e => `
-                    <li class="flex justify-between items-start mb-2 gap-5 border-s ps-4 hover:border-orange-500 relative">
-                        <span class="p-2 border active:translate-y-1 active:border-orange-500 hover:border-orange-500 cursor-pointer"><i class="fa-solid fa-trash"></i></span>
+                    <li name="attElement${e.id}" class="flex justify-between items-start mb-2 gap-5 border-s ps-4 hover:border-orange-500 relative">
+                        <span name="removeAtt${e.id}" class="p-2 border active:translate-y-1 active:border-orange-500 hover:border-orange-500 cursor-pointer"><i class="fa-solid fa-trash"></i></span>
                         <div class="w-2/3 grid grid-rows-5">
                             <div class="row-span-2">
                                 <input name="nameAtt${e.id}" type="text" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4" value="${e.color}">
@@ -74,10 +74,11 @@ ${sideNav()}
                                 `).join('')}
                             </div>
                         </div>
-                        <div class="w-1/3 overflow-hidden h-48 flex items-center relative">
-                            <input name="changeImgAtt${e.id}" class="hidden" type="file">
-                            <span class="absolute right-1/2 text-2xl"><i class="fa-regular fa-image"></i></span>
-                            <img class="w-full" src="${e.img}">
+                        <div class="w-1/3 overflow-hidden h-48 flex items-center relative border border-zinc-500 hover:border-orange-400">
+                            <input name="oldSrcImg${e.id}" type="hidden" value="${e.img}">
+                            <input name="inputFile${e.id}" class="hidden" type="file">
+                            <span name="changeImgAtt${e.id}" class="absolute right-0 top-0 flex items-center justify-center bg-opacity-0 bg-zinc-600 text-transparent w-full h-full cursor-pointer hover:text-orange-600 hover:bg-opacity-20 text-3xl"><i class="fa-regular fa-image"></i></span>
+                            <img name="previewImg${e.id}" class="w-full" src="${e.img}">
                         </div>
                     </li>
                 `).join('')}
