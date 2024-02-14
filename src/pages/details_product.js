@@ -10,8 +10,7 @@ const products = await getData('products');
 const DetailProductPage = (id) => {
     const prod = products.find((product) => product.id == id);
     const { attribute } = prod;
-    const presentAttribute = Array.from(attribute).find(a => a.id === 1);
-    console.log(presentAttribute.id);
+    const presentAttribute = attribute[0];
     const presentSize = presentAttribute.sizes[0]
     const presentStatus = status.find((s) => s.id == prod.statusId);
     const presentType = type.find((t) => t.id == prod.typeId);
@@ -51,7 +50,7 @@ return `
             <label for="colorValue" class="text-lg font-semibold">Color</label><br>
             <input name="att" type="number" id="colorValue" class="hidden" value="${presentAttribute.id}">
             ${Array.from(attribute).map(a => `
-                <button data-img="${a.img}" data-color="${a.id}" class="chooseColor p-2 px-3 mt-1 rounded-sm border font-semibold ${presentColor === a.color ? 'border-orange-500' : ''}">
+                <button data-img="${a.img}" data-att="${a.id}" class="chooseColor p-2 px-3 mt-1 rounded-sm border font-semibold ${presentColor === a.color ? 'border-orange-500' : ''}">
                     ${a.color}
                 </button>
             `).join('')}
@@ -60,9 +59,11 @@ return `
             <label for="sizeValue" class="text-lg font-semibold">Size</label><br>
             <input type="number" class="hidden" name="size" id="sizeValue"
             value="${presentSize}">
-            ${Array.from(presentAttribute.sizes).map(size => `
-                <button class="chooseSize p-2 px-3 rounded-sm border font-semibold ${size === presentAttribute.sizes[0] ? 'border-orange-500' : ''}">${size}</button>
-            `).join('')}
+            <div id="sizeProds">
+                ${Array.from(presentAttribute.sizes).map(size => `
+                    <button class="chooseSize p-2 px-3 rounded-sm border font-semibold ${size === presentAttribute.sizes[0] ? 'border-orange-500' : ''}">${size}</button>
+                `).join('')}
+            </div>
         </div>
         <div class="mt-5 flex justify-between items-center font-semibold">
             <span id="minus" class="p-2 px-3 border active:translate-y-1 active:border-orange-500 active:text-orang-500"> - </span>

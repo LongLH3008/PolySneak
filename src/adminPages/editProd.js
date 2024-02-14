@@ -11,6 +11,11 @@ const EditProdPage = (id) => {
         changeClass = typeof(sizesProd) !== 'undefined' ? 'border-orange-500 rounded-sm font-semibold' : '';
         return changeClass
     }
+
+    const calcDiscProd = () => {
+        let price = prod.discount > 0 ? ( 100 - prod.discount)*prod.cost / 100 : prod.cost
+        return Math.ceil(price / 100) * 100
+    }
     return `
 <section class="w-full h-screen bg-zinc-100 overflow-hidden flex justify-between items-start">
 ${sideNav()}
@@ -38,16 +43,17 @@ ${sideNav()}
             </div>
             <div class="mt-5 flex gap-3 items-center">
                 <div class="flex flex-col w-1/3">
-                    <label class="text-md"><i class="fa-solid fa-percent mr-1"></i> Discount</label>
-                    <div class="flex w-full gap-2">
-                        <input name="discProd" type="number" class="w-1/4 outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 pr-0 ps-2 text-center" value="${prod.discount}">
-                        <p name="calcDiscProd" class="w-3/4 outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4 line-through text-end">x.xxx.xxx</p>
-                    </div>
+                    <label class="text-md"><i class="fa-solid fa-sack-dollar mr-1"></i> Price</label>
+                    <input name="priceProd" type="number" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4 ${prod.discount > 0 ? 'line-through' : ''}" value="${prod.cost}">
                 </div>
                 <div class="flex flex-col w-1/3">
-                    <label class="text-md"><i class="fa-solid fa-sack-dollar mr-1"></i> Price</label>
-                    <input name="priceProd" type="number" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4" value="${prod.cost}" placeholder="${prod.cost.toLocaleString('en-US')}">
+                    <label class="text-md"><i class="fa-solid fa-percent mr-1"></i> Discount</label>
+                    <div class="flex w-full gap-2">
+                        <input name="discProd" type="number" min="0" max="100" class="w-1/4 outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 pr-0 ps-2 text-center" value="${prod.discount}">
+                        <input name="calcDiscProd" type="text" readonly value="${prod.discount > 0 ? calcDiscProd() : 'No discount'}" class="w-3/4 outline-none border border-zinc-300 p-2 px-4 text-end"></input>
+                    </div>
                 </div>
+
             </div>
             <label class="text-md mt-10 mb-1"><i class="fa-solid fa-quote-right mr-1"></i> Description</label>
             <textarea name="descProd" cols="30" rows="10" class="resize-none h-full self-end w-full border border-dashed border-zinc-300 outline-none focus:border-orange-500 p-2 px-4">${prod.description}</textarea>
@@ -57,9 +63,9 @@ ${sideNav()}
                 <button name="reset" class="p-3 px-4 border-0 active:translate-y-1 text-white bg-gradient-to-tr hover:bg-gradient-to-bl from-zinc-600 to-gray-500" type="reset"><i class="fa-solid fa-arrow-rotate-left"></i></button>
                 <button class="p-3 px-4 border-0 active:translate-y-1 text-white bg-gradient-to-tr hover:bg-gradient-to-bl from-orange-600 to-amber-500" type="submit"><i class="fa-solid fa-check"></i></button>
             </div>
-            <ul id="colorsProds" class="h-5/6 overscrollHidden overflow-hidden overflow-y-scroll scroll-smooth flex flex-col gap-y-5">
+            <ul id="colorsProds" class="h-5/6 overscrollHidden overflow-hidden overflow-y-scroll scroll-smooth flex flex-col gap-y-5 relative">
                 ${prod.attribute.map(e => `
-                    <li name="attElement${e.id}" class="flex justify-between items-start mb-2 gap-5 border-s ps-4 hover:border-orange-500 relative">
+                    <li name="attElement${e.id}" class="attributeProds flex justify-between items-start mb-2 gap-5 border-s ps-4 hover:border-orange-500 relative">
                         <span name="removeAtt${e.id}" class="p-2 border active:translate-y-1 active:border-orange-500 hover:border-orange-500 cursor-pointer"><i class="fa-solid fa-trash"></i></span>
                         <div class="w-2/3 grid grid-rows-5">
                             <div class="row-span-2">
@@ -79,6 +85,7 @@ ${sideNav()}
                         </div>
                     </li>
                 `).join('')}
+                <span name="addAtt" class="z-20 w-full order-last p-3 border text-center cursor-pointer text-zinc-500 hover:border-orange-500 hover:text-orange-500">Add more ...</span>
             </ul>
         </div>
     </form>

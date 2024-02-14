@@ -21,6 +21,8 @@ import { DetailProdAddToCart, HomeAddToCart, ListProdAddToCart, changeAmount, ch
 import { RenderProds } from "./handler/renderProds.js";
 import { editProd, updateProd } from "./admin/updateProd.js";
 import EditProdPage from "./adminPages/editProd.js";
+import addProduct from "./adminPages/addproduct.js";
+import { handleAddProd } from "./admin/addprod.js";
 
 router.on('/', () => {
   render('#app', HomePage());
@@ -42,7 +44,7 @@ router.on('/product', () => {
 
 router.on('/detailproduct/:id', ({ data }) => {
   render('#app', DetailProductPage(data.id));
-  DetailProductHandler();
+  DetailProductHandler(data.id);
   ActiveStatus();
   DetailProdAddToCart(data.id)
 })
@@ -82,6 +84,11 @@ router.on('/admin/products', () => {
 router.on('/admin/editprod/:id', ({ data }) => {
   render('#app', EditProdPage(data.id));
   editProd(data.id);
+})
+
+router.on('/admin/addProduct', () => {
+  render('#app', addProduct());
+  handleAddProd();
 })
 
 router.on('/admin/users', () => {
