@@ -62,14 +62,14 @@ const ListProductPage = () => {
                     <p class="font-bold">${pro.name}</p>
                 </li>
                 <li class="flex justify-between items-end mt-3">
-                    <p>
-                    <span class="cost ${pro.discount > 0 ? 'line-through text-orange-400' : ''}">${pro.cost.toLocaleString('en-US')} đ</span><br>  
-                    <span class="${pro.discount > 0 ? '' : 'text-transparent'}">
-                        ${pro.discount > 0 ? ((100 - pro.discount) * pro.cost / 100).toLocaleString('en-US') + ' đ' : ''}</span>
+                    <p class="">
+                        <span class="cost ${pro.discount > 0 ? 'line-through text-orange-400' : 'text-transparent'}">${pro.discount > 0 ? pro.cost.toLocaleString('en-US') + ' đ' : '0.000.000'}</span><br>  
+                        <span class="">
+                            ${pro.discount > 0 ? ((100 - pro.discount) * pro.cost / 100).toLocaleString('en-US') + ' đ' : pro.cost.toLocaleString('en-US') + ' đ'}</span>
                     </p>
                     <button id="listprod_add_to_cart${pro.id}"
-                    class="p-2 px-3 rounded-md bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">
-                    <i class="fa-solid fa-cart-arrow-down"></i>
+                        class="p-2 px-3 rounded-md bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
                     </button>
                 </li>
             </ul>
