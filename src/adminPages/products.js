@@ -17,7 +17,7 @@ ${sideNav()}
             <li class="w-1/3 border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">Price</li>
             <li class="w-full border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold col-span-3">Color / Size / Images</li>
             <li class="w-2/3  border border-transparent text-center flex items-center justify-center p-3 bg-zinc-600 text-white font-semibold">Description</li>
-            <a href="/admin/addProduct" class="w-1/3 h-full items-center flex justify-center bg-gradient-to-bl from-orange-500 to-amber-400 hover:bg-gradient-to-tr text-2xl rounded-md text-white">
+            <a href="/admin/addProduct" class="w-1/3 h-full items-center flex justify-center bg-gradient-to-bl from-orange-500 to-amber-400 hover:bg-gradient-to-tr text-2xl text-white">
                 <i class="fa-regular fa-square-plus"></i> 
             </a>
         </ul>
@@ -55,8 +55,8 @@ ${sideNav()}
                 </li>
                 <li class="w-2/3 border border-zinc-300 flex items-start justify-center text-justify p-3">${pd.description}</li>
                 <li class="w-1/3 border border-zinc-300 text-center flex py-3 items-start justify-evenly">
-                    <button name="editProds_${pd.id}" data-id="${pd.id}" class="button p-2 px-3 bg-gradient-to-tr from-zinc-600 to-gray-400 hover:bg-gradient-to-bl hover:-translate-y-1 active:translate-y-1 text-white rounded-md"><i class="fa-solid fa-pen"></i></button>
-                    <button name="delProds_${pd.id}" data-id="${pd.id}" class="button p-2 px-3 bg-gradient-to-tr from-red-600 to-red-400 hover:bg-gradient-to-bl hover:-translate-y-1 active:translate-y-1 text-white rounded-md"><i class="fa-regular fa-trash-can"></i></button>
+                    <button name="editProds_${pd.id}" data-id="${pd.id}" class="button p-2 px-3 bg-gradient-to-tr from-zinc-600 to-gray-400 hover:bg-gradient-to-bl hover:-translate-y-1 active:translate-y-1 text-white rounded-sm"><i class="fa-solid fa-pen"></i></button>
+                    <button name="delProds_${pd.id}" data-id="${pd.id}" class="button p-2 px-3 bg-gradient-to-tr from-red-600 to-red-400 hover:bg-gradient-to-bl hover:-translate-y-1 active:translate-y-1 text-white rounded-sm"><i class="fa-regular fa-trash-can"></i></button>
                 </li>
             </ul>
             `).join('')}

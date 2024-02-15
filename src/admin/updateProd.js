@@ -172,7 +172,7 @@ const creatAttElement = () => {
                     `).join('')}
                 </div>
             </div>
-            <div class="w-1/3 overflow-hidden h-48 flex items-center relative border border-zinc-500 hover:border-orange-400">
+            <div class="w-1/3 overflow-hidden h-48 flex items-center relative border hover:border-orange-400">
                 <input name="new_inputFile${id}" class="opacity-0 self-center" type="file" required>
                 <span name="new_changeImgAtt${id}" class="absolute right-0 top-0 flex items-center justify-center bg-opacity-0 bg-zinc-600 text-transparent w-full h-full cursor-pointer hover:text-orange-600 hover:bg-opacity-20 text-3xl"><i class="fa-regular fa-image"></i></span>
                 <img name="new_previewImg${id}" class="w-full" src="">
