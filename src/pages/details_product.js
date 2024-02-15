@@ -19,10 +19,7 @@ const DetailProductPage = (id) => {
     // console.log(presentStatus);
 
 return `
-<section class="w-full px-48 font-semibold">
-    ${HeaderComponent()}    
-</section>
-
+${HeaderComponent()}    
 <section class="mt-20 px-48 w-full">
 <div class="flex flex-between items-start gap-x-20 h-fit overflow-hidden">
     <div class="carousel w-5/12 overflow-hidden flex items-center">

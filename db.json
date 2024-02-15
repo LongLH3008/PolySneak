@@ -70,11 +70,10 @@
     {
       "id": 1,
       "name": "Air Jordan 1 Low",
-      "statusId": "3",
-      "typeId": "3",
-      "cost": "3329000",
-      "discount": "10",
-      "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
+      "statusId": 3,
+      "typeId": 3,
+      "cost": 3329000,
+      "discount": 10,
       "attribute": [
         {
           "id": 1,
@@ -124,7 +123,6 @@
       "typeId": 1,
       "cost": 4259000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/rcrzrsqnkt7vgde4hhpo/air-jordan-legacy-312-low-shoes-6Vd4Xl.png",
       "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
       "attribute": [
         {
@@ -169,7 +167,6 @@
       "typeId": 1,
       "cost": 5439000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ec5c0284-730d-4bb9-8920-abe3c55c50e9/air-jordan-xxxviii-low-pf-basketball-shoes-2lBnKn.png",
       "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
       "attribute": [
         {
@@ -203,7 +200,6 @@
       "typeId": 1,
       "cost": 5439000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1cfc4de7-080f-4246-8055-5fc79f1eb430/air-jordan-1-low-se-shoes-ZbxSRp.png",
       "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
       "attribute": [
         {
@@ -248,7 +244,6 @@
       "typeId": 3,
       "cost": 4409000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0c675ac2-d6f2-400e-84ba-1a18003608ac/air-jordan-1-mid-se-shoes-XkFP30.png",
       "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
       "attribute": [
         {
@@ -271,7 +266,6 @@
       "typeId": 3,
       "cost": 4259000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/dca03476-2343-49cc-ac02-aaa5f56e1d6c/air-jordan-1-zoom-cmft-2-shoes-nX8Qqx.png",
       "description": "Get grounded, stay grounded. The AJ XXXVIII is all about groundwork—we're talking about your running, your cutting, your turn-around jumpers—with low-to-the-court cushioning and a secure upper that helps support every move. It's also designed with sustainability in mind, with at least 20% recycled content by weight. So you can hit 'em with that windscreen-wiper fake and feel good about more than just sinking a bucket for your team.",
       "attribute": [
         {
@@ -294,7 +288,6 @@
       "typeId": 4,
       "cost": 3519000,
       "discount": 0,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/631e05dc-3906-47d9-8934-0f74c74bcf41/tatum-1-home-team-pf-basketball-shoes-JbXhDt.png",
       "description": "Designed to carry you from the first to the fourth (and whatever OT comes up) as efficiently as possible, we stripped it down to the essentials—and made those essentials really, really good. The result is this season's lightest performance basketball shoe, with rubber only where it counts, a stress-tested foam midsole and an uncaged Nike Zoom Air unit for those explosive ups. Whatever stage of ball you're at, the Tatum 1 will keep you playing.",
       "attribute": [
         {
@@ -317,7 +310,6 @@
       "typeId": 4,
       "cost": 3829000,
       "discount": 20,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3251a6d3-13bd-4fc1-8874-272b554f44a1/go-flyease-easy-on-off-shoes-3svRCL.png",
       "description": "Ditch the laces and get outside. These kicks feature Nike's revolutionary FlyEase technology, making on-and-off a breeze. With a heel that pivots open for a totally hands-free entry, they're great for people with limited mobility—or anyone who wants a quicker way to get going.",
       "attribute": [
         {
@@ -349,6 +341,39 @@
           "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/938de508-2ff7-408c-962b-14fb007e2d22/go-flyease-easy-on-off-shoes-3svRCL.png",
           "sizes": [
             40,
+            41,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Nike Invincible 3",
+      "statusId": 3,
+      "typeId": 2,
+      "cost": 5279000,
+      "discount": 0,
+      "description": "With maximum cushioning to support every mile, the Invincible 3 has our highest level of comfort underfoot. Its plush and bouncy ZoomX foam helps you stay stable and fresh. In other words—it's going to feel good all day, whatever you're doing. It has everything you need so you can propel down your preferred path and come back for your next run feeling ready and reinvigorated.",
+      "attribute": [
+        {
+          "id": 1,
+          "color": "White/Photon Dust/Fierce",
+          "stock": 3,
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e7018a6d-5dcb-47aa-a0ba-2f30100c4d1e/invincible-3-road-running-shoes-Wwmmlp.png",
+          "sizes": [
+            40,
+            41,
+            43
+          ]
+        },
+        {
+          "id": 2,
+          "color": "Thunder Blue/Black",
+          "stock": 2,
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f4add04d-480d-415c-9ae8-ca8b047ddb5f/invincible-3-road-running-shoes-Wwmmlp.png",
+          "sizes": [
+            38,
             41,
             42
           ]

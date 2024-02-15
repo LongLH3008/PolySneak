@@ -31,7 +31,7 @@ ${sideNav()}
             <div class="mt-5 flex gap-3 items-center">
                 <div class="flex flex-col w-1/3">
                     <label class="text-md"><i class="fa-solid fa-sack-dollar mr-1"></i> Price</label>
-                    <input required name="priceProd" type="number" class="w-full outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4" value="">
+                    <input required name="priceProd" type="number" class="w-full focus:no-underline outline-none border border-zinc-300 focus:text-orange-500 focus:border-orange-500 p-2 px-4" value="">
                 </div>
                 <div class="flex flex-col w-1/3">
                     <label class="text-md"><i class="fa-solid fa-percent mr-1"></i> Discount</label>

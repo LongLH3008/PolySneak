@@ -21,15 +21,16 @@ const handleSearchBox = () => {
     const resultSearch = document.getElementById('resultSearch');
     const inputsearchbox = document.querySelector('input[name="inputsearchbox"]');
     const closeSearchbox = document.querySelector('span[name="closeSearchbox"]');
+    let totalResults = document.querySelector('#totalResults');
 
     closeSearchbox.addEventListener('click', () => {
         document.body.style.overflow = 'auto';
-        searchbox.classList.add('hidden');
+        searchbox.classList.toggle('-translate-y-full');
     })
 
     openSearchbox.addEventListener('click', () => {
         document.body.style.overflow = 'hidden';
-        searchbox.classList.remove('hidden');
+        searchbox.classList.toggle('-translate-y-full');
     })
 
     window.addEventListener('beforeunload', function () {
@@ -52,11 +53,9 @@ const handleSearchBox = () => {
 
     inputsearchbox.addEventListener('keyup', () => {
         let value = inputsearchbox.value;
-        console.log(inputsearchbox.value);
-        if (value !== '') {
-            const results = products.filter(pd => pd.name.toLowerCase().includes(value.toLowerCase()))
-            console.log(results.length);
-            if (results.length > 0) {
+        const results = products.filter(pd => pd.name.toLowerCase().includes(value.toLowerCase()))
+        if (value !== '' && results.length > 0) {
+            totalResults.innerText = results.length > 1 ? results.length + ' results founded' : results.length + ' result founded'
                 setTimeout(() => {
                     resultSearch.innerHTML = `
                     ${results.map(e => `
@@ -71,15 +70,15 @@ const handleSearchBox = () => {
                     `).join('')}
                     `
                 }, 1000);
-            } else {
-                setTimeout(() => {
-                    resultSearch.innerHTML = `
-                    <li class="flex justify-center items-center h-full w-full">
-                        No data founded <i class="fa-regular fa-face-sad-tear ms-1"></i>
-                    </li>
-                    `
-                }, 1000);
-            }
+        } else {
+            totalResults.innerText = '';
+            setTimeout(() => {
+                resultSearch.innerHTML = `
+                <li class="flex justify-center items-center h-full w-full">
+                    No data founded <i class="fa-regular fa-face-sad-tear ms-1"></i>
+                </li>
+                `
+            }, 1000);
         }
     })
 }
@@ -90,7 +89,6 @@ const ActiveStatus = () => {
 
     if (user) {
         const dataUsers = data.find(dt => dt.username === user)
-        // console.log(dataUsers);
         userStatus.innerHTML = `
                 <div id="activeUser" class="cursor-pointer p-2 px-3 rounded-tr-md rounded-tl-md border-b-0 hover:bg-gradient-to-r from-zinc-600 to-gray-500 hover:text-white">
                     <i class="fa-solid fa-circle-user text-2xl"></i>

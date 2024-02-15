@@ -35,12 +35,12 @@ ${listProds.length > 0
         <div class="h-fit rounded-lg shadow-md border-2 text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
             <div class="h-56 flex items-center py-5 overflow-hidden border-b">
                 <a href='/detailproduct/${pro.id}' class="">
-                    <img class="w-full" src="${pro.img}" alt="${pro.name}">
+                    <img class="w-full" src="${pro.attribute[0].img}" alt="${pro.name}">
                 </a>
             </div>
             <ul class="p-3 flex flex-col justify-between gap-y-2 ">
                 <li class="">
-                    <span class="${checkStatus(pro.statusId) == "none" ? 'text-transparent' : 'text-orange-500'} font-semibold">
+                    <span class="${checkStatus(pro.statusId) == "None" ? 'text-transparent' : 'text-orange-500'} font-semibold">
                     ${checkStatus(pro.statusId)}
                     </span>
                     <p class="font-bold">${pro.name}</p>

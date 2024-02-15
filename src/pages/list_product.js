@@ -13,11 +13,8 @@ const ListProductPage = () => {
         const { name } = result
         return name
     }
-
     return `
-<section class="w-full px-48 font-semibold">
-    ${HeaderComponent()}    
-</section>
+${HeaderComponent()}    
 <section class="mt-5 px-48 w-full">
 <div class="grid grid-cols-10 gap-4">
     <div class="col-span-2 flex flex-col gap-4 text-zinc-500 font-semibold">

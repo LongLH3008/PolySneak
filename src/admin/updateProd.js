@@ -136,10 +136,10 @@ const SendDataUpdate = async (id) => {
         let updateProd = {
             id: idProd,
             name: nameProd,
-            statusId: sttProd,
-            typeId: typeProd,
-            cost: priceProd,
-            discount: discProd,
+            statusId: Number(sttProd),
+            typeId: Number(typeProd),
+            cost: Number(priceProd),
+            discount: Number(discProd),
             description: descProd,
             attribute: attProd
         };

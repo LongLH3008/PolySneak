@@ -27,8 +27,8 @@ const CartPage = () => {
     }
 
     return `
-<section class="w-full px-48 font-semibold">
 ${HeaderComponent()}
+<section class="w-full px-48 font-semibold">
 </section>
 <section class="mt-10 px-48">
 <form id="cart_and_order" action="" class="w-full flex justify-between items-start gap-5 text-zinc-600 min-h-96">

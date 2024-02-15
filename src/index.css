@@ -84,9 +84,7 @@
 }
 
 #searchbox {
-    box-shadow: 0 0 6px #353535;
-    border: none;
-    height: 60vh;
+    height: 65vh;
 }
 
 .bounce {
