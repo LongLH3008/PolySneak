@@ -1,13 +1,13 @@
 import { products } from "../../utils"
 import { getData } from "../admin/handleCRUD";
+import { ListProdAddToCart } from "../handler/cart";
 
 const type = await getData('type');
 const status = await getData('status');
 
-const ListProds = (type = "", stt = "") => {
+export const ListProds = (type = "", stt = "") => {
+    const renderProds = document.getElementById('renderProds');
     let listProds = [];
-    // console.log(type);
-    // console.log(stt);
     const checkStatus = (id) => {
         const result = status.find(st => st.id == id)
         const { name } = result
@@ -26,9 +26,8 @@ const ListProds = (type = "", stt = "") => {
             listProds = products
         }
     }
-    return `
-${listProds.length > 0
-    ? `
+    renderProds.innerHTML = listProds.length > 0
+        ? `
     ${listProds.map(pro => `
         <input name="attribute_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
         <input name="size_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].sizes[0]}" />
@@ -60,13 +59,10 @@ ${listProds.length > 0
         </div>
     `).join('')}
     `
-    : `
+        : `
     <div class="col-span-8 h-full flex justify-center items-center border border-dashed border-zinc-300 text-zinc-500 rounded-md">
         No data founded <i class="fa-regular fa-face-sad-tear ms-1"></i>
     </div>
     `
+    ListProdAddToCart();
 }
-`
-}
-
-export default ListProds

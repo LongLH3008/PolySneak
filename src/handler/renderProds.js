@@ -1,4 +1,4 @@
-import ListProds from "../components/listProds";
+import { ListProds } from "../components/listProds";
 
 export const RenderProds = () => {
     let type = '';
@@ -42,7 +42,7 @@ export const RenderProds = () => {
                 ? checkType.classList.remove('hidden')
                 : checkType.classList.add('hidden')
 
-            renderProds.innerHTML = ListProds(valuetype(checkedType, type), valuestt(checkedStatus, stt))
+            ListProds(valuetype(checkedType, type), valuestt(checkedStatus, stt))
 
         })
     }
@@ -57,7 +57,7 @@ export const RenderProds = () => {
             c.classList.toggle('from-orange-500')
             c.classList.toggle('to-amber-400')
             c.classList.toggle('text-white')
-            renderProds.innerHTML = ListProds(valuetype(checkedType, type), valuestt(checkedStatus, stt))
+            ListProds(valuetype(checkedType, type), valuestt(checkedStatus, stt))
         })
     }
 }
