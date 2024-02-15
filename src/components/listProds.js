@@ -32,7 +32,7 @@ ${listProds.length > 0
     ${listProds.map(pro => `
         <input name="attribute_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
         <input name="size_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].sizes[0]}" />
-        <div class="h-fit rounded-lg shadow-md border-2 text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
+        <div class="h-fit rounded-lg border-2 text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
             <div class="h-56 flex items-center py-5 overflow-hidden border-b">
                 <a href='/detailproduct/${pro.id}' class="">
                     <img class="w-full" src="${pro.attribute[0].img}" alt="${pro.name}">
