@@ -1,4 +1,5 @@
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD.js';
+import { v4 as uuidv4 } from 'uuid';
 const data = await getData('users')
 
 export const AddUser = () => {
@@ -11,11 +12,10 @@ export const AddUser = () => {
         const pass = document.querySelector('input[name="pass"]').value;
         const repass = document.querySelector('input[name="repass"]').value;
         const rule = document.querySelector('select[name="rule"]').value;
-        console.log(rule);
         let check = "Success";
 
         let adduser = {
-            id: '',
+            id: uuidv4(),
             username: user,
             password: pass,
             rule: rule,

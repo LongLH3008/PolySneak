@@ -5,6 +5,28 @@
       "username": "admin@123",
       "password": "123",
       "rule": "admin",
+      "cart": [
+        {
+          "id": "aff1657a-cccc-4481-a1b5-9497e870ab3e",
+          "idpro": "1",
+          "attribute": "2",
+          "size": "41",
+          "amount": "1"
+        },
+        {
+          "id": "97c899ba-d870-4827-9531-1b91f62a5a59",
+          "idpro": 1,
+          "attribute": "1",
+          "size": "38",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "3cb932ec-eb31-4fa0-b2d1-28e8bdbfde48",
+      "username": "longlhph31572@fpt.edu.vn",
+      "password": "123",
+      "rule": "customer",
       "cart": []
     }
   ],
@@ -48,17 +70,15 @@
     {
       "id": 1,
       "name": "Air Jordan 1 Low",
-      "statusId": 3,
-      "typeId": 1,
-      "cost": 3329000,
-      "discount": 10,
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fe657d71-ee16-43ca-b7de-3e9313b288a1/air-jordan-1-low-shoes-6Q1tFM.png",
+      "statusId": "3",
+      "typeId": "3",
+      "cost": "3329000",
+      "discount": "10",
       "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
       "attribute": [
         {
           "id": 1,
           "color": "red",
-          "stock": 20,
           "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fe657d71-ee16-43ca-b7de-3e9313b288a1/air-jordan-1-low-shoes-6Q1tFM.png",
           "sizes": [
             38,
@@ -72,7 +92,6 @@
         {
           "id": 2,
           "color": "white",
-          "stock": 35,
           "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4e68ee0e-15fc-4bcc-9220-b7f659087c0d/air-jordan-1-low-shoes-6Q1tFM.png",
           "sizes": [
             38,
@@ -86,7 +105,6 @@
         {
           "id": 3,
           "color": "blue",
-          "stock": 35,
           "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/278e1c48-dd0e-4a1e-8b96-eee84074b094/air-jordan-1-low-shoes-6Q1tFM.png",
           "sizes": [
             38,

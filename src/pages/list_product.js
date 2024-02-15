@@ -48,9 +48,9 @@ const ListProductPage = () => {
         ${products.map(pro => `
         <input name="attribute_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].id}" />
         <input name="size_pro_listprod${pro.id}" type="hidden" value="${pro.attribute[0].sizes[0]}" />
-        <div class="rounded-lg shadow-md border-2 h-fit text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
+        <div class="rounded-lg border-2 h-fit text-zinc-700 hover:border-orange-300 hover:-translate-y-3 cursor-pointer">
             <div class="h-56 flex items-center py-5 overflow-hidden border-b">
-                <a href='/detailproduct/${pro.id}' class="">
+                <a href='/detailproduct/${pro.id}' class="overflow-hidden w-full">
                     <img class="w-full" src="${pro.attribute[0].img}" alt="${pro.name}">
                 </a>
             </div>
@@ -68,7 +68,7 @@ const ListProductPage = () => {
                             ${pro.discount > 0 ? ((100 - pro.discount) * pro.cost / 100).toLocaleString('en-US') + ' đ' : pro.cost.toLocaleString('en-US') + ' đ'}</span>
                     </p>
                     <button id="listprod_add_to_cart${pro.id}"
-                        class="p-2 px-3 rounded-md bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">
+                        class="p-2 px-3 rounded-sm bg-gradient-to-br hover:from-orange-500 from-zinc-600 to-gray-400 hover:to-amber-300 text-white active:translate-y-1">
                         <i class="fa-solid fa-cart-arrow-down"></i>
                     </button>
                 </li>

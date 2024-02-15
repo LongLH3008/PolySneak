@@ -76,13 +76,28 @@
     max-height: 80vh;
 }
 
-#colorsProds {
-    /* max-height: 71vh; */
-}
-
 #cart_info {
     max-height: 70vh;
     border-width: 4px;
     border-style: solid;
     border-image: linear-gradient(to top right, rgb(249 115 22), rgb(251 191 36)) 0 1 0 0 stretch;
+}
+
+#searchbox {
+    box-shadow: 0 0 6px #353535;
+    border: none;
+    height: 60vh;
+}
+
+.bounce {
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0% ,100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }

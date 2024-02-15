@@ -24,6 +24,8 @@ import EditProdPage from "./adminPages/editProd.js";
 import addProduct from "./adminPages/addproduct.js";
 import { handleAddProd } from "./admin/addprod.js";
 
+// handleSearchBox();
+
 router.on('/', () => {
   render('#app', HomePage());
   HomeAddToCart();
