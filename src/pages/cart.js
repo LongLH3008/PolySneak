@@ -41,7 +41,8 @@ ${HeaderComponent()}
                 <span name="deleteall" class="hidden cursor-pointer p-3 py-2 bg-gradient-to-tr hover:bg-gradient-to-bl from-red-600 to-rose-400 text-white "><i class="fa-solid fa-xmark"></i> Remove All</span>
             </div>
         </div>
-        <ul id="cart_info" class="pt-5 overscrollHidden overflow-y-scroll pr-5 border-r-2">
+        <p class="pb-3 font-semibold w-full flex justify-start order-first">${cartUser.length > 1 ? cartUser.length + ' products' : cartUser.length + ' product'}</p>
+        <ul id="cart_info" class="relative pt-1 overscrollHidden flex flex-col overflow-y-scroll pr-5 border-r-2">
             ${cartUser.length > 0
             ? `
             ${cartUser.map(c => `

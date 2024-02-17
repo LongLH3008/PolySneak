@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { createData } from '../admin/handleCRUD';
+import md5 from 'md5';
+
 const SignUpHandler = () => {
     const api = 'http://localhost:3000/users';
 
@@ -36,7 +38,7 @@ const SignUpHandler = () => {
         let adduser = {
             id: uuidv4(),
             username: usernameSignup,
-            password: passwordSignup,
+            password: md5(passwordSignup),
             rule: 'customer',
             cart: []
         }

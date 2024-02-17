@@ -1,3 +1,4 @@
+import md5 from 'md5';
 import { sendRequest, getData, deleteData, updateData, createData } from '../admin/handleCRUD.js';
 import { v4 as uuidv4 } from 'uuid';
 const data = await getData('users')
@@ -17,7 +18,7 @@ export const AddUser = () => {
         let adduser = {
             id: uuidv4(),
             username: user,
-            password: pass,
+            password: md5(pass),
             rule: rule,
             cart: []
         }

@@ -33,6 +33,7 @@ const AddToCart = (id, size, att = 1, amt = 1) => {
             newData.cart.push(newProd);
         }
         updateData(newData.id, newData, 'users');
+        alert('Added')
     } else {
         alert('Please sign in first !');
         setTimeout(() => {

@@ -1,3 +1,4 @@
+import md5 from "md5";
 
 const SignInHandler = () => {
     const api = 'http://localhost:3000/users';
@@ -22,7 +23,7 @@ const SignInHandler = () => {
 
         data.map(dt => {
             if (dt.username == user) {
-                check = dt.password == pass ? 'Welcome' : 'Wrong Password';
+                check = dt.password == md5(pass) ? 'Welcome' : 'Wrong Password';
             }
         });
 

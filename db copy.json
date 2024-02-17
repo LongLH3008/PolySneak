@@ -3,31 +3,10 @@
     {
       "id": 1,
       "username": "admin@123",
-      "password": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
       "rule": "admin",
       "cart": [
-        {
-          "id": "aff1657a-cccc-4481-a1b5-9497e870ab3e",
-          "idpro": "1",
-          "attribute": "2",
-          "size": "41",
-          "amount": "1"
-        },
-        {
-          "id": "97c899ba-d870-4827-9531-1b91f62a5a59",
-          "idpro": 1,
-          "attribute": "1",
-          "size": "38",
-          "amount": 1
-        }
       ]
-    },
-    {
-      "id": "3cb932ec-eb31-4fa0-b2d1-28e8bdbfde48",
-      "username": "longlhph31572@fpt.edu.vn",
-      "password": "123",
-      "rule": "customer",
-      "cart": []
     }
   ],
   "status": [

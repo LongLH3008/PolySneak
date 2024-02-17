@@ -3,31 +3,38 @@
     {
       "id": 1,
       "username": "admin@123",
-      "password": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
       "rule": "admin",
+      "cart": []
+    },
+    {
+      "id": "b670f539-6da8-4899-997b-c6497f557033",
+      "username": "longlhph31572@fpt.edu.vn",
+      "password": "0bcaa933b1bbbbeae8a6692512aee7cb",
+      "rule": "customer",
       "cart": [
         {
-          "id": "aff1657a-cccc-4481-a1b5-9497e870ab3e",
-          "idpro": "1",
-          "attribute": "2",
-          "size": "41",
-          "amount": "1"
-        },
-        {
-          "id": "97c899ba-d870-4827-9531-1b91f62a5a59",
+          "id": "0dd3599e-292f-4264-a7ce-f1eff18df48f",
           "idpro": 1,
           "attribute": "1",
           "size": "38",
           "amount": 1
+        },
+        {
+          "id": "2597e0bf-7b87-4632-8bc9-03a6396cac25",
+          "idpro": 2,
+          "attribute": "1",
+          "size": "39",
+          "amount": 2
+        },
+        {
+          "id": "5dff76ee-639b-458a-886b-747324c46135",
+          "idpro": 4,
+          "attribute": 1,
+          "size": "40",
+          "amount": 1
         }
       ]
-    },
-    {
-      "id": "3cb932ec-eb31-4fa0-b2d1-28e8bdbfde48",
-      "username": "longlhph31572@fpt.edu.vn",
-      "password": "123",
-      "rule": "customer",
-      "cart": []
     }
   ],
   "status": [
