@@ -34,6 +34,10 @@ const SignUpHandler = () => {
         let passwordSignup = document.getElementById('passwordSignup').value;
         let repassword = document.getElementById('repassword').value;
         let err = '';
+        if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/.test(passwordSignup)) {
+            alert('At least one lower / upper / number/ symbor');
+            return;
+        }
 
         let adduser = {
             id: uuidv4(),
